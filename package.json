@@ -1,0 +1,16 @@
+{
+    "urls": [
+      ["arduino_nicla_sense_env/__init__.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/__init__.py"],
+      ["arduino_nicla_sense_env/constants.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/constants.py"],
+      ["arduino_nicla_sense_env/i2c_device.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/i2c_device.py"],
+      ["arduino_nicla_sense_env/indoor_air_quality_sensor.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/indoor_air_quality_sensor.py"],
+      ["arduino_nicla_sense_env/nicla_sense_env.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/nicla_sense_env.py"],
+      ["arduino_nicla_sense_env/outdoor_air_quality_sensor.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/outdoor_air_quality_sensor.py"],
+      ["arduino_nicla_sense_env/rgb_led.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/rgb_led.py"],
+      ["arduino_nicla_sense_env/temperature_humidity_sensor.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/temperature_humidity_sensor.py"],
+      ["arduino_nicla_sense_env/white_led.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/white_led.py"]
+    ],
+    "deps": [
+    ],
+    "version": "1.0.0"
+  }
