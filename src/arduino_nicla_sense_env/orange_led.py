@@ -13,11 +13,13 @@ class OrangeLED(I2CDevice):
 
         Returns
         ----
-            int: The brightness of the orange LED. Range is 0 to 63.
+            int: The brightness of the orange LED. Range is 0 to 255.
         """
         # Read bits 0 - 5 from orange_led register
         data = self._read_from_register(REGISTERS["orange_led"])
-        return data & 63
+        brightness = data & 63
+        # Map brightness from 0-63 to 0-255
+        return round((brightness * 255) / 63)
 
     @brightness.setter
     def brightness(self, led_brightness = 63) -> None:
@@ -30,11 +32,14 @@ class OrangeLED(I2CDevice):
             led_brightness (int): 
                 The brightness of the orange LED. Range is 0 to 63.
         """
-        if led_brightness < 0 or led_brightness > 63:
-            raise ValueError("Brightness must be between 0 and 63")
+        if led_brightness < 0 or led_brightness > 255:
+            raise ValueError("Brightness must be between 0 and 255")
+        
+        # Map brightness from 0-255 to 0-63
+        mapped_brightness = round((led_brightness * 63) / 255)
         current_register_data = self._read_from_register(REGISTERS["orange_led"])
         # Overwrite bits 0 - 5 with the new value by clearing the bits and then setting them
-        self._write_to_register(REGISTERS["orange_led"], (current_register_data & 0b11000000) | led_brightness)        
+        self._write_to_register(REGISTERS["orange_led"], (current_register_data & 0b11000000) | mapped_brightness)        
 
     @property
     def error_status_enabled(self) -> bool:

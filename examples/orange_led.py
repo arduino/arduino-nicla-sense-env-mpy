@@ -12,12 +12,12 @@ def pulse_led(led):
     # Fade in
     for i in range(0, 255):
         led.brightness = i
-        sleep_ms(10)
+        sleep_ms(4)
     
     # Fade out
     for i in range(255, -1, -1):
         led.brightness = i
-        sleep_ms(10)
+        sleep_ms(4)
 
 device = NiclaSenseEnv()
 
