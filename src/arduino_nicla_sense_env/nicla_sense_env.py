@@ -4,7 +4,7 @@ from .temperature_humidity_sensor import TemperatureHumiditySensor
 from .indoor_air_quality_sensor import IndoorAirQualitySensor
 from .outdoor_air_quality_sensor import OutdoorAirQualitySensor
 from .rgb_led import RGBLED
-from .white_led import WhiteLED
+from .orange_led import OrangeLED
 from .i2c_device import I2CDevice
 from .constants import REGISTERS
 
@@ -29,8 +29,8 @@ class NiclaSenseEnv(I2CDevice):
         - Indoor air quality sensor mode
         - Outdoor air quality sensor mode
         - Temperature sensor enabled
-        - White LED brightness
-        - White LED error status enabled
+        - Orange LED brightness
+        - Orange LED error status enabled
         - RGB LED brightness
         - RGB LED color
 
@@ -138,14 +138,14 @@ class NiclaSenseEnv(I2CDevice):
         return RGBLED(self.bus, self.device_address)
 
     @property
-    def white_led(self):
+    def orange_led(self):
         """
-        Gets the white LED control interface.
+        Gets the orange LED control interface.
 
         Returns:
-            WhiteLED: The white LED.
+            OrangeLED: The orange LED.
         """
-        return WhiteLED(self.bus, self.device_address)
+        return OrangeLED(self.bus, self.device_address)
 
     def reset(self):
         """

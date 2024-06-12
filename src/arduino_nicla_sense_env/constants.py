@@ -4,7 +4,7 @@ REGISTERS = {
     "status": {"address": 0x00, "type": "uint8", "bytes": 1},  # Board Status Register
     "slave_address": {"address": 0x01, "type": "uint8", "bytes": 1},  # Board Slave Address Register (valid immediately after writing)
     "control": {"address": 0x02, "type": "uint8", "bytes": 1},  # Board Control Register
-    "white_led": {"address": 0x03, "type": "uint8", "bytes": 1},  # White LED Control Register
+    "orange_led": {"address": 0x03, "type": "uint8", "bytes": 1},  # Orange LED Control Register
     "rgb_led_red": {"address": 0x04, "type": "uint8", "bytes": 1},  # RGB LED Control Register RED (4x uint8)
     "rgb_led_green": {"address": 0x05, "type": "uint8", "bytes": 1},  # GREEN
     "rgb_led_blue": {"address": 0x06, "type": "uint8", "bytes": 1},  # BLUE

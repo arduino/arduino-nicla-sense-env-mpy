@@ -8,7 +8,7 @@
       ["arduino_nicla_sense_env/outdoor_air_quality_sensor.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/outdoor_air_quality_sensor.py"],
       ["arduino_nicla_sense_env/rgb_led.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/rgb_led.py"],
       ["arduino_nicla_sense_env/temperature_humidity_sensor.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/temperature_humidity_sensor.py"],
-      ["arduino_nicla_sense_env/white_led.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/white_led.py"]
+      ["arduino_nicla_sense_env/orange_led.py", "github:arduino/arduino-nicla-sense-env-mpy/src/arduino_nicla_sense_env/orange_led.py"]
     ],
     "deps": [
     ],

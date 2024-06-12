@@ -5,7 +5,7 @@
 This library supports the complete API exposed by the Nicla Sense Env sensor board over I2C.
 
 - 🌈 RGB LED control
-- ⚪️ White LED control
+- ⚪️ Orange LED control
 - 💤 Board control (sleep, reset, factory reset)
 - 🔧 Board configuration (e.g. changing the I2C address)
 - 🏠 Indoor Air Quality Sensor control
@@ -46,7 +46,7 @@ if device.connected:
     # ...
     rgb_led = device.rgb_led
     # ...
-    white_led = device.white_led
+    orange_led = device.orange_led
     # ...
 ```
 Once the desired object is obtained you can call functions and query properties on these objects such as `temperature_sensor.temperature`.
@@ -65,4 +65,4 @@ The following scripts are examples of how to use the Nicla Sense Env board with 
 - [rgb_led.py](../examples/rgb_led.py): Demonstrates how to control the board's RGB LED.
 - [temperature_humidity.py](../examples/temperature_humidity.py): Demonstrates how to read the temperature and humidity data from the board's sensors.
 - [uart_read.py](../examples/uart_read.py): Shows how to read data from the UART port on the board when not connecting to it over I2C.
-- [white_led.py](../examples/white_led.py): Demonstrates how to control the board's white LED.
+- [orange_led.py](../examples/orange_led.py): Demonstrates how to control the board's orange LED.
