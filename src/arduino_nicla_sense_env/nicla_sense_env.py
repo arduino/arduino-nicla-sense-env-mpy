@@ -16,6 +16,31 @@ class NiclaSenseEnv(I2CDevice):
         self._indoor_air_quality_sensor = None
         self._outdoor_air_quality_sensor = None
 
+    def _persist_register(self, register_address):
+        """
+        Persists the value of the given register address to the flash memory.
+
+        Parameters
+        ----
+            register_address (int): 
+                The address of the register to persist.
+
+        Returns
+        ----
+            bool: True if the write was successful, False otherwise.
+        """
+        self._write_to_register(REGISTERS["defaults_register"], register_address | (1 << 7))
+        
+        # Read bit 7 to check if the write is complete. When the write is complete, bit 7 will be 0.
+        # Try 10 times with increasing delay between each try
+        for i in range(10):
+            defaults_register_data = self._read_from_register(REGISTERS["defaults_register"])
+            if not defaults_register_data & (1 << 7):
+                return True
+            print("⌛️ Waiting for flash write to complete...")
+            # Exponential sleep duration
+            sleep_us(100 * (2 ** i))
+
     def store_settings_in_flash(self):
         """
         Writes the current configuration to the flash memory.
