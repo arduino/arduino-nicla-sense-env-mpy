@@ -9,7 +9,7 @@ def pulse_led(led):
     """
     Pulses the LED from off to full brightness and back to off.
     """
-    print(f"🌈 RGB values: {rgb_led.rgb}")
+    print(f"🌈 RGB values: {rgb_led.color}")
 
     for i in range(0, 256):
         led.brightness = i
@@ -23,13 +23,13 @@ def pulse_colors(led):
     Pulses the LED through the colors red, green, blue and white.
     """
     # Brightness can also be set via 4th tuple element
-    led.rgb = (255, 0, 0, 255)
+    led.color = (255, 0, 0, 255)
     pulse_led(led)
-    led.rgb = (0, 255, 0)
+    led.color = (0, 255, 0)
     pulse_led(led)
-    led.rgb = (0, 0, 255)
+    led.color = (0, 0, 255)
     pulse_led(led)
-    led.rgb = (255, 255, 255)
+    led.color = (255, 255, 255)
     pulse_led(led)
 
 device = NiclaSenseEnv()
