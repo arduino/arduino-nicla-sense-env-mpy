@@ -16,7 +16,7 @@ class NiclaSenseEnv(I2CDevice):
         self._indoor_air_quality_sensor = None
         self._outdoor_air_quality_sensor = None
 
-    def store_settings_in_flash(self):
+    def persist_settings(self):
         """
         Writes the current configuration to the flash memory.
         Stores board register 0x00 ... 0x0B in flash to be default after reset
@@ -164,7 +164,7 @@ class NiclaSenseEnv(I2CDevice):
     def restore_factory_settings(self):
         """
         Restores the factory settings. This will reset among other properties the device address to the default value.
-        See store_settings_in_flash() for a complete list of properties that are affected by this method.
+        See persist_settings() for a complete list of properties that are affected by this method.
         """
 
         board_control_register_data = self._read_from_register(REGISTERS["control"])
@@ -179,7 +179,7 @@ class NiclaSenseEnv(I2CDevice):
             board_control_register_data = self._read_from_register(REGISTERS["control"])
             
             if board_control_register_data != None and (not board_control_register_data & (1 << 5)):
-                return self.store_settings_in_flash()
+                return self.persist_settings()
             print("⌛️ Waiting for factory reset to complete...")
             # Exponential sleep duration
             sleep_us(100 * (2 ** i))
