@@ -6,7 +6,7 @@ class OutdoorAirQualitySensorMode:
     POWER_DOWN = 0
     CLEANING = 1
     OUTDOOR_AIR_QUALITY = 2
-    DEFAULT = OUTDOOR_AIR_QUALITY
+    DEFAULT = POWER_DOWN
 
 class OutdoorAirQualitySensor(I2CDevice):
 
@@ -181,7 +181,7 @@ class OutdoorAirQualitySensor(I2CDevice):
         Enables or disables the outdoor air quality sensor.
         Use `set_enabled` with `persist` set to True to make the change persistent.
         When disabled the sensor goes in power down mode.
-        When the sensor is enabled after being disabled, the sensor will go back to the default mode.
+        When the sensor is enabled after being disabled, the sensor will go back to the OUTDOOR_AIR_QUALITY mode.
 
         Parameters
         ----
@@ -192,7 +192,7 @@ class OutdoorAirQualitySensor(I2CDevice):
         if is_enabled == self.enabled:
             return
         if is_enabled:
-            self.mode = OutdoorAirQualitySensorMode.DEFAULT
+            self.mode = OutdoorAirQualitySensorMode.OUTDOOR_AIR_QUALITY
         else:
             self.mode = OutdoorAirQualitySensorMode.POWER_DOWN
 
