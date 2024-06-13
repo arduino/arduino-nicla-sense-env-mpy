@@ -57,7 +57,7 @@ class TemperatureHumiditySensor(I2CDevice):
     def enabled(self, is_enabled: bool):
         """
         Enables or disables the temperature sensor.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after enabling/disabling the temperature sensor to make the change persistent.
+        Use `set_enabled` with `persist` set to True to make the change persistent.
 
         Parameters
         ----

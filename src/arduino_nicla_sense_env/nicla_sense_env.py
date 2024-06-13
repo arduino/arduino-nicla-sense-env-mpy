@@ -213,7 +213,7 @@ class NiclaSenseEnv(I2CDevice):
     def uart_baud_rate(self, baud_rate):
         """
         Set the baud rate of the UART interface.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the baud rate to make the change persistent.
+        Use `set_uart_baud_rate` with `persist` set to True to make the change persistent.
 
         Parameters
         ----
@@ -269,7 +269,7 @@ class NiclaSenseEnv(I2CDevice):
     def uart_csv_output_enabled(self, enabled):
         """
         Enables or disables CSV output over UART.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the CSV output mode to make the change persistent.
+        Use `set_uart_csv_output_enabled` with `persist` set to True to make the change persistent.
 
         The column names and their order are:
         HS4001 sample counter, HS4001 temperature (degC), HS4001 humidity (%RH), ZMOD4510 status, ZMOD4510 sample counter, 
@@ -331,7 +331,7 @@ class NiclaSenseEnv(I2CDevice):
     def csv_delimiter(self, delimiter):
         """
         Sets the delimiter character for CSV output.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the delimiter to make the change persistent.
+        Use `set_csv_delimiter` with `persist` set to True to make the change persistent.
 
         Parameters
         ----
@@ -389,7 +389,7 @@ class NiclaSenseEnv(I2CDevice):
         """
         Enables or disables debugging mode.
         When debugging mode is enabled, the board will send additional debug messages over UART.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the debugging mode to make the change persistent.
+        Use `set_debugging_enabled` with `persist` set to True to make the change persistent.
 
         Parameters
         ----
@@ -426,7 +426,7 @@ class NiclaSenseEnv(I2CDevice):
     def device_address(self, address):
         """
         Sets the I2C address of the device.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the address to make the change persistent.
+        Use `set_device_address` with `persist` set to True to make the change persistent.
 
         Parameters
         ----

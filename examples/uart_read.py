@@ -7,8 +7,8 @@ UART output needs to be enabled on the Nicla Sense Env for this example to work.
 You can do so by connecting to the board over I2C to a host board, and running the following code:
 
 device = NiclaSenseEnv()
-device.uart_csv_output_enabled = True
-device.store_settings_in_flash() # Store the settings so they are not lost after a reset
+# Set `persist` to True so the settings are not lost after a reset
+device.set_uart_csv_output_enabled(True, persist=True)
 """
 
 from machine import Pin, UART

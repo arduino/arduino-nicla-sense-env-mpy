@@ -10,7 +10,6 @@ class RGBLED(I2CDevice):
         """
         Makes the RGB LED show the indoor air quality. (Green = Good, Yellow = Medium, Red = Bad)
         To do so it sets all RGB LED colors to 0 and sets the brightness to the specified value.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after enabling the indoor air quality status to make the change persistent.
 
         Parameters
         ----
@@ -27,7 +26,6 @@ class RGBLED(I2CDevice):
         """
         Sets the RGB LED to the specified color. 
         Note: A value of 0, 0, 0 will set the color based on the IAQ value from the Indoor Air Quality sensor.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the RGB LED color to make the change persistent.
 
         Parameters
         ----
@@ -74,7 +72,7 @@ class RGBLED(I2CDevice):
     def color(self, color: tuple[int, int, int, int | None]) -> None:
         """
         Sets the RGB LED color.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the RGB LED color to make the change persistent.
+        Use `set_color` with `persist` set to True to make the change persistent.
 
         Parameters
         ----
@@ -98,7 +96,7 @@ class RGBLED(I2CDevice):
     def brightness(self, brightness: int) -> None:
         """
         Sets the brightness of the RGB LED.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the RGB LED brightness to make the change persistent.
+        Use `set_brightness` with `persist` set to True to make the change persistent.
 
         Parameters
         ----
@@ -112,7 +110,6 @@ class RGBLED(I2CDevice):
     def set_brightness(self, brightness: int, persist: bool = False) -> bool:
         """
         Sets the brightness of the RGB LED.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the RGB LED brightness to make the change persistent.
 
         Parameters
         ----

@@ -25,7 +25,7 @@ class OrangeLED(I2CDevice):
     def brightness(self, led_brightness) -> None:
         """
         Sets the brightness of the orange LED.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after changing the orange LED brightness to make the change persistent.
+        Use `set_brightness` with `persist` set to True to make the change persistent.
 
         Parameters
         ----
@@ -72,7 +72,7 @@ class OrangeLED(I2CDevice):
     def error_status_enabled(self, enabled: bool) -> None:
         """
         Enables or disables the orange LED to indicate an error status of one of the sensors.
-        Call store_settings_in_flash() on NiclaSenseEnv instance after enabling/disabling the orange LED error status to make the change persistent.
+        Use `set_error_status_enabled` with `persist` set to True to make the change persistent.
 
         Parameters
         ----
