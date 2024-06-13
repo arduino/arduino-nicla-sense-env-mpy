@@ -127,6 +127,25 @@ class OutdoorAirQualitySensor(I2CDevice):
         # Overwrite bits 4 and 5 with the new value
         self._write_to_register(REGISTERS["status"], (current_register_data & 0b11001111) | (sensor_mode << 4))
 
+    def set_mode(self, sensor_mode: int, persist = False) -> bool:
+        """
+        Sets the outdoor air quality sensor mode and persists the setting to flash memory.
+
+        Parameters
+        ----
+            sensor_mode (int): 
+                The outdoor air quality sensor mode.
+                Possible values are: POWER_DOWN, CLEANING, OUTDOOR_AIR_QUALITY.
+                These values are contained in OutdoorAirQualitySensorMode.
+            persist (bool): 
+                Whether to persist the setting to flash memory.
+                When persist is True, the mode setting of IndoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
+        """
+        self.mode = sensor_mode
+        if persist:
+            return self._persist_register(REGISTERS["status"])
+        return True
+
     @property
     def mode_string(self) -> str | None:
         """

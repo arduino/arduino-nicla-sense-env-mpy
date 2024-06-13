@@ -16,31 +16,6 @@ class NiclaSenseEnv(I2CDevice):
         self._indoor_air_quality_sensor = None
         self._outdoor_air_quality_sensor = None
 
-    def _persist_register(self, register_address):
-        """
-        Persists the value of the given register address to the flash memory.
-
-        Parameters
-        ----
-            register_address (int): 
-                The address of the register to persist.
-
-        Returns
-        ----
-            bool: True if the write was successful, False otherwise.
-        """
-        self._write_to_register(REGISTERS["defaults_register"], register_address | (1 << 7))
-        
-        # Read bit 7 to check if the write is complete. When the write is complete, bit 7 will be 0.
-        # Try 10 times with increasing delay between each try
-        for i in range(10):
-            defaults_register_data = self._read_from_register(REGISTERS["defaults_register"])
-            if not defaults_register_data & (1 << 7):
-                return True
-            print("⌛️ Waiting for flash write to complete...")
-            # Exponential sleep duration
-            sleep_us(100 * (2 ** i))
-
     def store_settings_in_flash(self):
         """
         Writes the current configuration to the flash memory.
@@ -270,7 +245,13 @@ class NiclaSenseEnv(I2CDevice):
             return
         # Set bit 0 - 2 to the new baud rate
         self._write_to_register(REGISTERS["uart_control"], (uart_control_register_data & 0b11111000) | baud_rate)
-        
+    
+    def set_uart_baud_rate(self, baud_rate, persist=False) -> bool:
+        self.uart_baud_rate = baud_rate
+        if persist:
+            return self._persist_register(REGISTERS["uart_control"])
+        return True
+
     @property
     def uart_csv_output_enabled(self):
         """
@@ -316,6 +297,23 @@ class NiclaSenseEnv(I2CDevice):
         # Set bit 1 to 1 if enabled or 0 if disabled while keeping the other bits unchanged
         self._write_to_register(REGISTERS["control"], (board_control_register_data & 0b11111101) | (int(enabled) << 1))
         
+    def set_uart_csv_output_enabled(self, enabled, persist=False) -> bool:
+        """
+        Enables or disables CSV output over UART.
+
+        Parameters
+        ----
+            enabled (bool): 
+                Whether to enable or disable CSV output over UART.
+            persist (bool): 
+                Whether to persist the change to flash memory.
+                When set to True, it will also persist the value of `debugging_enabled`.
+        """
+        self.uart_csv_output_enabled = enabled
+        if persist:
+            return self._persist_register(REGISTERS["control"])
+        return True
+
     @property
     def csv_delimiter(self):
         """
@@ -354,7 +352,24 @@ class NiclaSenseEnv(I2CDevice):
 
         # Use ASCII code of the delimiter character
         self._write_to_register(REGISTERS["csv_delimiter"], ord(delimiter))
-        
+
+    def set_csv_delimiter(self, delimiter, persist=False) -> bool:
+        """
+        Sets the delimiter character for CSV output.
+
+        Parameters
+        ----
+            delimiter (str): 
+                The new delimiter character. Must be a single printable ASCII character.
+                The following characters are not allowed: \r, \n, \, ", '
+            persist (bool): 
+                Whether to persist the change to flash memory.
+        """
+        self.csv_delimiter = delimiter
+        if persist:
+            return self._persist_register(REGISTERS["csv_delimiter"])    
+        return True
+    
     @property
     def debugging_enabled(self):
         """
@@ -389,7 +404,24 @@ class NiclaSenseEnv(I2CDevice):
 
         # Set bit 0 to 1 if enabled or 0 if disabled while keeping the other bits unchanged
         self._write_to_register(REGISTERS["control"], board_control_register_data & 0b11111110 | int(enabled))
-        
+
+    def set_debugging_enabled(self, enabled, persist=False) -> bool:
+        """
+        Enables or disables debugging mode.
+
+        Parameters
+        ----
+            enabled (bool): 
+                Whether to enable or disable debugging mode.
+            persist (bool): 
+                Whether to persist the change to flash memory.
+                When set to True, it will also persist the value of `uart_csv_output_enabled`.
+        """
+        self.debugging_enabled = enabled
+        if persist:
+            return self._persist_register(REGISTERS["control"])
+        return True
+
     @I2CDevice.device_address.setter
     def device_address(self, address):
         """
@@ -419,3 +451,19 @@ class NiclaSenseEnv(I2CDevice):
         self._write_to_register(REGISTERS["slave_address"], (address_register_data & 0b10000000) | address)
         sleep_us(100) # Wait for the new address to take effect
         self._device_address = address
+
+    def set_device_address(self, address, persist=False) -> bool:
+        """
+        Sets the I2C address of the device.
+
+        Parameters
+        ----
+            address (int): 
+                The new I2C address. Valid values are 0 to 127.
+            persist (bool): 
+                Whether to persist the change to flash memory.
+        """
+        self.device_address = address
+        if persist:
+            return self._persist_register(REGISTERS["slave_address"])
+        return True

@@ -1,7 +1,8 @@
 from machine import I2C
+from time import sleep_us
 import os
 import struct
-from .constants import DEVICE_I2C_INTERFACES
+from .constants import DEVICE_I2C_INTERFACES, REGISTERS
 
 class I2CHelper:
     """
@@ -145,6 +146,33 @@ class I2CDevice:
         
         return raw_data
     
+    def _persist_register(self, register: dict) -> bool:
+        """
+        Persists the value of the given register address to the flash memory.
+
+        Parameters
+        ----
+            register (dict): 
+                The register to persist.
+
+        Returns
+        ----
+            bool: True if the write was successful, False otherwise.
+        """
+        self._write_to_register(REGISTERS["defaults_register"], register["address"] | (1 << 7))
+        
+        # Read bit 7 to check if the write is complete. When the write is complete, bit 7 will be 0.
+        # Try 10 times with increasing delay between each try
+        for i in range(10):
+            defaults_register_data = self._read_from_register(REGISTERS["defaults_register"])
+            if not defaults_register_data & (1 << 7):
+                return True
+            print("⌛️ Waiting for flash write to complete...")
+            # Exponential sleep duration
+            sleep_us(100 * (2 ** i))
+
+        return False
+
     @property
     def device_address(self) -> int | None:
         """
