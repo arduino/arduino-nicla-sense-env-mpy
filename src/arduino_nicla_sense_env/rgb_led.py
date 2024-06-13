@@ -21,9 +21,9 @@ class RGBLED(I2CDevice):
                 Whether to persist the setting to flash memory.
                 When persist is True, the brightness will also be persisted.
         """
-        return self.set_color(0, 0, 0, brightness, persist)
+        return self.set_color((0,0,0, brightness), persist)
 
-    def set_color(self, color:tuple[int, int, int], brightness: int | None = None, persist: bool = False) -> bool:
+    def set_color(self, color:tuple[int, int, int, int | None], persist: bool = False) -> bool:
         """
         Sets the RGB LED to the specified color. 
         Note: A value of 0, 0, 0 will set the color based on the IAQ value from the Indoor Air Quality sensor.
@@ -32,8 +32,8 @@ class RGBLED(I2CDevice):
         Parameters
         ----
             color (tuple[int, int, int]):
-                The RGB color components red, green, blue
-                The range for each color component is 0 to 255.            
+                The RGB color components red, green, blue and brightness.
+                The range for each value is 0 to 255.            
             brightness (int, optional): 
                 The brightness of the RGB LED. Range is 0 to 255.
                 If None, the current brightness will be used.
@@ -45,8 +45,9 @@ class RGBLED(I2CDevice):
         self._write_to_register(REGISTERS["rgb_led_green"], color[1])
         self._write_to_register(REGISTERS["rgb_led_blue"], color[2])
         
-        if brightness is not None:            
-            self._write_to_register(REGISTERS["rgb_led_intensity"], brightness)
+        # Set brightness if specified
+        if len(color) == 4 and color[3] is not None:
+            self._write_to_register(REGISTERS["rgb_led_intensity"], color[3])
 
         if persist:
             return self._persist_register(REGISTERS["rgb_led_red"]) and \
@@ -70,15 +71,15 @@ class RGBLED(I2CDevice):
         return (red, green, blue)
     
     @color.setter
-    def color(self, color: tuple[int, int, int]) -> None:
+    def color(self, color: tuple[int, int, int, int | None]) -> None:
         """
         Sets the RGB LED color.
         Call store_settings_in_flash() on NiclaSenseEnv instance after changing the RGB LED color to make the change persistent.
 
         Parameters
         ----
-            colors (tuple[int, int, int]): 
-                The RGB color components red, green, blue
+            colors (tuple[int, int, int, int]): 
+                The RGB color components red, green, blue and brightness.
         """
         self.set_color(color)
 
