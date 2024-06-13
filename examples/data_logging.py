@@ -36,6 +36,9 @@ def connect_wifi(ssid, password):
 	print('Network config:', sta_if.ifconfig())
 
 def current_time():
+    """
+    Returns the current time from the RTC as a formatted string.
+    """
     now = gmtime()
     return f"{now[2]}.{now[1]}.{now[0]} {now[3]:02d}:{now[4]:02d}:{now[5]:02d}"
 
@@ -46,7 +49,10 @@ def blink_led(led, times=1, delay=0.2):
         led.value(1)
         sleep(delay)
 
-def read_data(filename):    
+def read_data(filename) -> str | None:
+    """
+    Reads the data from the specified file and returns it as a string.
+    """
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             return file.read()
@@ -57,7 +63,10 @@ def read_data(filename):
             print(f"Error reading file: {filename}. Error: {e}")
         return None
 
-def log_data(filename, data):
+def log_data(filename:str, data: str):
+    """
+    Appends the data to the specified file.
+    """
     try:
         with open(filename, 'a', encoding='utf-8') as file:
             file.write(data + '\n')
