@@ -24,11 +24,9 @@ if device.connected:
 
     # Enable outdoor air quality sensor (disabled by default)
     # Please note that it may take some time for the sensor to deliver the first data
-    outdoor_air_quality_sensor.mode = OutdoorAirQualitySensorMode.OUTDOOR_AIR_QUALITY
+    # Use set_enabled(True, persist=True) make the change persistent
+    outdoor_air_quality_sensor.enabled = True
     display_sensor_data(outdoor_air_quality_sensor)
-
-    # Optionally disable the sensor
-    # outdoor_air_quality_sensor.enabled = False
 
 else:
     print("🤷 Device could not be found. Please double check the wiring.")

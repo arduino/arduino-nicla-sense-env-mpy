@@ -6,7 +6,7 @@ class OutdoorAirQualitySensorMode:
     POWER_DOWN = 0
     CLEANING = 1
     OUTDOOR_AIR_QUALITY = 2
-    DEFAULT = POWER_DOWN
+    DEFAULT = OUTDOOR_AIR_QUALITY
 
 class OutdoorAirQualitySensor(I2CDevice):
 
