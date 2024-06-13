@@ -180,6 +180,7 @@ class OutdoorAirQualitySensor(I2CDevice):
         """
         Enables or disables the outdoor air quality sensor.
         Use `set_enabled` with `persist` set to True to make the change persistent.
+        When disabled the sensor goes in power down mode.
         When the sensor is enabled after being disabled, the sensor will go back to the default mode.
 
         Parameters
@@ -198,6 +199,8 @@ class OutdoorAirQualitySensor(I2CDevice):
     def set_enabled(self, is_enabled: bool, persist = False) -> bool:
         """
         Enables or disables the outdoor air quality sensor and persists the setting to flash memory.
+        When disabled the sensor goes in power down mode.
+        When the sensor is enabled after being disabled, the sensor will go back to the default mode.
 
         Parameters
         ----
