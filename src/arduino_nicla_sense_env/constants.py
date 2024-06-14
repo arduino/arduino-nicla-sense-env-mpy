@@ -37,6 +37,7 @@ REGISTERS = {
     "zmod4410_temp": {"address": 0xC8, "type": "float", "bytes": 4},  # ZMOD4410 Temp (temperature in degC used during ambient compensation)
     "zmod4410_intensity": {"address": 0xCC, "type": "float", "bytes": 4},  # ZMOD4410 Intensity (odor intensity)
     "zmod4410_odor_class": {"address": 0xD0, "type": "uint8", "bytes": 1},  # ZMOD4410 Odor class (1 = sulfur odor, 0 = others)
+    "defaults_register" : {"address": 0xD4, "type": "uint8", "bytes": 1}  # Persist settings
 }
 
 DEVICE_I2C_INTERFACES = {

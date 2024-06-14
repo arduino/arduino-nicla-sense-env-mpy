@@ -38,6 +38,7 @@ if device.connected:
 
     # Set indoor air quality sensor mode to sulfur odor (default is indoor air quality)    
     # After switching modes you may need to wait some time before the sensor delivers the first data.
+    # Use set_mode(IndoorAirQualitySensorMode.SULFUR, persist=True) to make the change persistent.
     # indoor_air_quality_sensor.mode = IndoorAirQualitySensorMode.SULFUR
     # display_sensor_data(indoor_air_quality_sensor)
 

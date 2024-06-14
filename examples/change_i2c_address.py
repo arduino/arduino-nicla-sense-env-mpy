@@ -17,10 +17,9 @@ device = NiclaSenseEnv(device_address=CURRENT_I2C_ADDRESS)
 check_connection(device)
 
 print(f"🔧 Changing device address to 0x{CUSTOM_I2C_ADDRESS:x}...")
-device.device_address = CUSTOM_I2C_ADDRESS
+device.set_device_address(CUSTOM_I2C_ADDRESS, persist=True)
 check_connection(device)
 
-device.store_settings_in_flash()
 print("🔄 Resetting device to check if change is persistent...")
 device.reset()
 sleep(2)
