@@ -1,32 +1,5 @@
 # 📖 Documentation
 
-## ✨ Features
-
-This library supports the complete API exposed by the Nicla Sense Env sensor board over I2C.
-
-- 🌈 RGB LED control
-- ⚪️ Orange LED control
-- 💤 Board control (sleep, reset, factory reset)
-- 🔧 Board configuration (e.g. changing the I2C address)
-- 🏠 Indoor Air Quality Sensor control
-    - Change mode (Power down, cleaning, Indoor Air quality, sulfur detection)
-    - Detect sulfur
-    - Measure odor intensity
-    - Measure ethanol level
-    - Measure TVOC
-    - Measure CO2
-    - Measure air quality
-- 🌳 Outdoor Air Quality Sensor control
-    - Change mode (Power down, cleaning, Outdoor Air quality)
-    - Measure NO2
-    - Measure O3
-    - Measure air quality
-- 🌡 Temperature/Humidity Sensor Control
-    - Change mode (Power down, temperature/humidity)
-    - Read temperature
-    - Read humidity
-- 📄 UART CSV output
-
 ## 💻 Usage
 
 To use this library you can import the `arduino_nicla_sense_env` module along with the desired classes which give you access to the different sensor and actuator objects:

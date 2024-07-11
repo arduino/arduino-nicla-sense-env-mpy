@@ -2,6 +2,33 @@
 
 This package contains an API to read sensor data from the Nicla Sense Env board and control its behaviour. The board host three different sensors which can be read simultaneously: **ZMOD4410** (Indoor Air Quality), **ZMOD4510** (Outdoor Air Quality), **HS4001** (Temperature & Humidity).
 
+## ✨ Features
+
+This library supports the complete API exposed by the Nicla Sense Env sensor board over I2C.
+
+- 🌈 RGB LED control
+- ⚪️ Orange LED control
+- 💤 Board control (sleep, reset, factory reset)
+- 🔧 Board configuration (e.g. changing the I2C address)
+- 🏠 Indoor Air Quality Sensor control
+    - Change mode (Power down, cleaning, Indoor Air quality, sulfur detection)
+    - Detect sulfur
+    - Measure odor intensity
+    - Measure ethanol level
+    - Measure TVOC
+    - Measure CO2
+    - Measure air quality
+- 🌳 Outdoor Air Quality Sensor control
+    - Change mode (Power down, cleaning, Outdoor Air quality)
+    - Measure NO2
+    - Measure O3
+    - Measure air quality
+- 🌡 Temperature/Humidity Sensor Control
+    - Change mode (Power down, temperature/humidity)
+    - Read temperature
+    - Read humidity
+- 📄 UART CSV output
+
 ## 📖 Documentation
 For more information on the features of this library and how to use them please read the documentation [here](./docs/).
 
