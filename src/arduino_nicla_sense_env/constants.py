@@ -6,8 +6,8 @@ REGISTERS = {
     "control": {"address": 0x02, "type": "uint8", "bytes": 1},  # Board Control Register
     "orange_led": {"address": 0x03, "type": "uint8", "bytes": 1},  # Orange LED Control Register
     "rgb_led_red": {"address": 0x04, "type": "uint8", "bytes": 1},  # RGB LED Control Register RED (4x uint8)
-    "rgb_led_green": {"address": 0x05, "type": "uint8", "bytes": 1},  # GREEN
-    "rgb_led_blue": {"address": 0x06, "type": "uint8", "bytes": 1},  # BLUE
+    "rgb_led_blue": {"address": 0x05, "type": "uint8", "bytes": 1},  # Blue LED control
+    "rgb_led_green": {"address": 0x06, "type": "uint8", "bytes": 1},  # Green LED control. Note that the green and blue LEDs were swapped in the mounted LED.
     "rgb_led_intensity": {"address": 0x07, "type": "uint8", "bytes": 1},  # Intensity
     "uart_control": {"address": 0x08, "type": "uint8", "bytes": 1},  # Board UART Control Register
     "csv_delimiter": {"address": 0x09, "type": "uint8", "bytes": 1},  # CSV Delimiter character (ASCII)
