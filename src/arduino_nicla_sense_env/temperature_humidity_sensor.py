@@ -5,13 +5,6 @@ class TemperatureHumiditySensor(I2CDevice):
     """
     Represents a HS4001 temperature and humidity sensor connected to an I2C bus.
     This class provides properties to read the temperature and humidity from the sensor.
-
-    Properties
-    -------
-    temperature(self)
-        Gets the temperature in degrees Celsius from the HS4001 sensor.
-    humidity(self)
-        Gets the humidity from the HS4001 sensor.
     """
 
     @property

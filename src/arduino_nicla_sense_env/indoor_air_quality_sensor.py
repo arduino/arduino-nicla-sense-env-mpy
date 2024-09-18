@@ -15,31 +15,6 @@ class IndoorAirQualitySensorMode:
 class IndoorAirQualitySensor(I2CDevice):
     """
     Class for interacting with the indoor air quality sensor.
-
-    Properties
-    ----
-        sulfur_odor (bool): 
-            True if the sulfur odor is detected, False otherwise.
-        odor_intensity (float): 
-            The odor intensity.
-        ethanol (float): 
-            The ethanol concentration in ppm.
-        co2 (float): 
-            The CO2 concentration in ppm.
-        tvoc (float): 
-            The TVOC concentration in mg/m3.
-        air_quality (float): 
-            The indoor air quality. Range is 0 to 5.
-        air_quality_interpreted (str): 
-            The indoor air quality.
-        relative_air_quality (float): 
-            The relative indoor air quality. Range is 0 to 100.
-        mode (int): 
-            The indoor air quality sensor mode.
-        mode_string (str): 
-            The indoor air quality sensor mode.
-        enabled (bool): 
-            True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
     """
 
     @property
