@@ -1,0 +1,15 @@
+[[tool.pydoc-markdown.loaders]]
+type = "python"
+search_path = [ "./src" ]
+packages = ["arduino_nicla_sense_env"]
+
+[tool.pydoc-markdown.renderer]
+type = "markdown"
+filename = "docs/api.md"
+code_headers = true
+descriptive_class_title = "class "
+descriptive_module_title = true
+add_module_prefix = false
+render_toc = true
+render_toc_title = "Summary"
+render_module_header = false
