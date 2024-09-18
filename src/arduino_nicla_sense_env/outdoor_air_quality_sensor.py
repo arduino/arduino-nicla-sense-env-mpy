@@ -107,7 +107,7 @@ class OutdoorAirQualitySensor(I2CDevice):
         Please ensure cleaning was completed before power-off/reset and do not interrupt while cleaning.
         The cleaning procedure takes 1 minute (blocking).
 
-        Args:
+        Parameters:
             sensor_mode (int): The outdoor air quality sensor mode.
                 Possible values are: POWER_DOWN, CLEANING, OUTDOOR_AIR_QUALITY.
                 These values are contained in OutdoorAirQualitySensorMode.
@@ -125,7 +125,7 @@ class OutdoorAirQualitySensor(I2CDevice):
         """
         Sets the outdoor air quality sensor mode and persists the setting to flash memory.
 
-        Args:
+        Parameters:
             sensor_mode (int): The outdoor air quality sensor mode.
                 Possible values are: POWER_DOWN, CLEANING, OUTDOOR_AIR_QUALITY.
                 These values are contained in OutdoorAirQualitySensorMode.
@@ -172,7 +172,7 @@ class OutdoorAirQualitySensor(I2CDevice):
         When disabled the sensor goes in power down mode.
         When the sensor is enabled after being disabled, the sensor will go back to the OUTDOOR_AIR_QUALITY mode.
 
-        Args:
+        Parameters:
             is_enabled (bool): Whether to enable or disable the outdoor air quality sensor.
         """
         # Ignore request if the sensor is already in desired state to maintain the current mode
@@ -189,7 +189,7 @@ class OutdoorAirQualitySensor(I2CDevice):
         When disabled the sensor goes in power down mode.
         When the sensor is enabled after being disabled, the sensor will go back to the default mode.
 
-        Args:
+        Parameters:
             is_enabled (bool): Whether to enable or disable the outdoor air quality sensor.
             persist (bool): Whether to persist the setting to flash memory.
                 When persist is True, the mode setting of IndoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.

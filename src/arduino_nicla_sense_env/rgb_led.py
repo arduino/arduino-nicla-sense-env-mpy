@@ -11,7 +11,7 @@ class RGBLED(I2CDevice):
         Makes the RGB LED show the indoor air quality. (Green = Good, Yellow = Medium, Red = Bad)
         To do so it sets all RGB LED colors to 0 and sets the brightness to the specified value.
 
-        Args:
+        Parameters:
             brightness (int, optional): The brightness of the RGB LED. 
                 If None, the current brightness will be used.
             persist (bool, optional): Whether to persist the setting to flash memory.
@@ -27,7 +27,7 @@ class RGBLED(I2CDevice):
         Sets the RGB LED to the specified color. 
         Note: A value of 0, 0, 0 will set the color based on the IAQ value from the Indoor Air Quality sensor.
 
-        Args:
+        Parameters:
             color (tuple[int, int, int]): The RGB color components red, green, blue and brightness.
                 The range for each value is 0 to 255.            
             brightness (int, optional): The brightness of the RGB LED. Range is 0 to 255.
@@ -69,7 +69,7 @@ class RGBLED(I2CDevice):
         Sets the RGB LED color.
         Use `set_color` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             colors (tuple[int, int, int, int]): The RGB color components red, green, blue and brightness.
         """
         self.set_color(color)
@@ -90,7 +90,7 @@ class RGBLED(I2CDevice):
         Sets the brightness of the RGB LED.
         Use `set_brightness` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             brightness (int): The brightness of the RGB LED. Range is 0 to 255.
         """
         if brightness < 0 or brightness > 255:
@@ -101,7 +101,7 @@ class RGBLED(I2CDevice):
         """
         Sets the brightness of the RGB LED.
 
-        Args:
+        Parameters:
             brightness (int): The brightness of the RGB LED. Range is 0 to 255.
             persist (bool, optional): Whether to persist the setting to flash memory.
                 When persist is True, the color will also be persisted.

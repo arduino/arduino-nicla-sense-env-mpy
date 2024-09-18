@@ -215,7 +215,7 @@ class NiclaSenseEnv(I2CDevice):
         Set the baud rate of the UART interface.
         Use `set_uart_baud_rate` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             baud_rate (int): the new baud rate.
                 The supported values are: 1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200
 
@@ -280,7 +280,7 @@ class NiclaSenseEnv(I2CDevice):
         Only the columns for this sensor will be filled, the other columns will be empty.
 
 
-        Args:
+        Parameters:
             enabled (bool): Whether to enable or disable CSV output over UART.
         """
         board_control_register_data = self._read_from_register(REGISTERS["control"])
@@ -296,7 +296,7 @@ class NiclaSenseEnv(I2CDevice):
         """
         Enables or disables CSV output over UART.
 
-        Args:
+        Parameters:
             enabled (bool): Whether to enable or disable CSV output over UART.
             persist (bool): Whether to persist the change to flash memory.
                 When set to True, it will also persist the value of `debugging_enabled`.
@@ -324,7 +324,7 @@ class NiclaSenseEnv(I2CDevice):
         Sets the delimiter character for CSV output.
         Use `set_csv_delimiter` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             delimiter (str): The new delimiter character. Must be a single printable ASCII character.
                 The following characters are not allowed: \r, \n, \, ", '
         """
@@ -346,7 +346,7 @@ class NiclaSenseEnv(I2CDevice):
         """
         Sets the delimiter character for CSV output.
 
-        Args:
+        Parameters:
             delimiter (str): The new delimiter character. Must be a single printable ASCII character.
                 The following characters are not allowed: \r, \n, \, ", '
             persist (bool): Whether to persist the change to flash memory.
@@ -376,7 +376,7 @@ class NiclaSenseEnv(I2CDevice):
         When debugging mode is enabled, the board will send additional debug messages over UART.
         Use `set_debugging_enabled` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             enabled (bool): Whether to enable or disable debugging mode.
         """
         board_control_register_data = self._read_from_register(REGISTERS["control"])
@@ -392,7 +392,7 @@ class NiclaSenseEnv(I2CDevice):
         """
         Enables or disables debugging mode.
 
-        Args:
+        Parameters:
             enabled (bool): Whether to enable or disable debugging mode.
             persist (bool): Whether to persist the change to flash memory.
                 When set to True, it will also persist the value of `uart_csv_output_enabled`.
@@ -408,7 +408,7 @@ class NiclaSenseEnv(I2CDevice):
         Sets the I2C address of the device.
         Use `set_device_address` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             address (int): The new I2C address. Valid values are 0 to 127.
 
         Raises:
@@ -433,7 +433,7 @@ class NiclaSenseEnv(I2CDevice):
         """
         Sets the I2C address of the device.
 
-        Args:
+        Parameters:
             address (int): The new I2C address. Valid values are 0 to 127.
             persist (bool): Whether to persist the change to flash memory.
         """

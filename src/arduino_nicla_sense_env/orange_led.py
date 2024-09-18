@@ -26,7 +26,7 @@ class OrangeLED(I2CDevice):
         Sets the brightness of the orange LED.
         Use `set_brightness` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             led_brightness (int): The brightness of the orange LED. Range is 0 to 63.
         """
         if led_brightness < 0 or led_brightness > 255:
@@ -42,7 +42,7 @@ class OrangeLED(I2CDevice):
         """
         Sets the brightness of the orange LED and persists the setting to flash memory.
 
-        Args:
+        Parameters:
             led_brightness (int): The brightness of the orange LED. Range is 0 to 255.
             persist (bool): Whether to persist the setting to flash memory.
                 When set to True, the value of `error_status_enabled` will also be persisted.
@@ -68,7 +68,7 @@ class OrangeLED(I2CDevice):
         Enables or disables the orange LED to indicate an error status of one of the sensors.
         Use `set_error_status_enabled` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             enabled (bool): Whether to enable or disable the orange LED error status.
         """
         current_register_data = self._read_from_register(REGISTERS["orange_led"])
@@ -80,7 +80,7 @@ class OrangeLED(I2CDevice):
         """
         Enables or disables the orange LED to indicate an error status of one of the sensors and persists the setting to flash memory.
 
-        Args:
+        Parameters:
             enabled (bool): Whether to enable or disable the orange LED error status.
             persist (bool): Whether to persist the setting to flash memory.
                 When set to True, the value of `brightness` will also be persisted.

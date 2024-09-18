@@ -57,7 +57,7 @@ class TemperatureHumiditySensor(I2CDevice):
         Enables or disables the temperature sensor.
         Use `set_enabled` with `persist` set to True to make the change persistent.
 
-        Args:
+        Parameters:
             is_enabled (bool): Whether to enable or disable the temperature sensor.
         """
         current_register_data = self._read_from_register(REGISTERS["status"])
@@ -73,7 +73,7 @@ class TemperatureHumiditySensor(I2CDevice):
         """
         Enables or disables the temperature sensor and persists the setting to flash memory.
 
-        Args:
+        Parameters:
             is_enabled (bool): Whether to enable or disable the temperature sensor.
             persist (bool): Whether to persist the setting to flash memory.
                 When persist is True, the mode setting of IndoorAirQualitySensor and OutdoorAirQualitySensor will also be persisted.

@@ -66,7 +66,7 @@ class I2CDevice:
         """
         A initializes the NiclaSenseEnv device.
 
-        Args:
+        Parameters:
             bus (I2C, optional): The I2C bus to use. If None, the default bus will be used.
             device_address (int, optional): The I2C address of the device. Defaults to 0x21.
         """
@@ -82,7 +82,7 @@ class I2CDevice:
         """
         Writes data to the specified register over I2C.
 
-        Args:
+        Parameters:
             register (dict): The register to write to.
             data (int/float): The data to write to the register.
                 Number is converted into a byte array based on the register type and number of bytes.
@@ -113,7 +113,7 @@ class I2CDevice:
         """
         Reads data from the specified register over I2C.
 
-        Args:
+        Parameters:
             register (dict): The register to read from.
 
         Returns:
@@ -142,7 +142,7 @@ class I2CDevice:
         """
         Persists the value of the given register address to the flash memory.
 
-        Args:
+        Parameters:
             register (dict): The register to persist.
 
         Returns:
