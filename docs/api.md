@@ -1,6 +1,21 @@
 # Summary
 
 * [arduino\_nicla\_sense\_env](#arduino_nicla_sense_env)
+* [orange\_led](#arduino_nicla_sense_env.orange_led)
+  * [OrangeLED](#arduino_nicla_sense_env.orange_led.OrangeLED)
+    * [brightness](#arduino_nicla_sense_env.orange_led.OrangeLED.brightness)
+    * [brightness](#arduino_nicla_sense_env.orange_led.OrangeLED.brightness)
+    * [set\_brightness](#arduino_nicla_sense_env.orange_led.OrangeLED.set_brightness)
+    * [error\_status\_enabled](#arduino_nicla_sense_env.orange_led.OrangeLED.error_status_enabled)
+    * [error\_status\_enabled](#arduino_nicla_sense_env.orange_led.OrangeLED.error_status_enabled)
+    * [set\_error\_status\_enabled](#arduino_nicla_sense_env.orange_led.OrangeLED.set_error_status_enabled)
+* [i2c\_device](#arduino_nicla_sense_env.i2c_device)
+  * [I2CHelper](#arduino_nicla_sense_env.i2c_device.I2CHelper)
+    * [get\_interface](#arduino_nicla_sense_env.i2c_device.I2CHelper.get_interface)
+  * [I2CDevice](#arduino_nicla_sense_env.i2c_device.I2CDevice)
+    * [\_\_init\_\_](#arduino_nicla_sense_env.i2c_device.I2CDevice.__init__)
+    * [device\_address](#arduino_nicla_sense_env.i2c_device.I2CDevice.device_address)
+    * [connected](#arduino_nicla_sense_env.i2c_device.I2CDevice.connected)
 * [rgb\_led](#arduino_nicla_sense_env.rgb_led)
   * [RGBLED](#arduino_nicla_sense_env.rgb_led.RGBLED)
     * [enable\_indoor\_air\_quality\_status](#arduino_nicla_sense_env.rgb_led.RGBLED.enable_indoor_air_quality_status)
@@ -10,29 +25,7 @@
     * [brightness](#arduino_nicla_sense_env.rgb_led.RGBLED.brightness)
     * [brightness](#arduino_nicla_sense_env.rgb_led.RGBLED.brightness)
     * [set\_brightness](#arduino_nicla_sense_env.rgb_led.RGBLED.set_brightness)
-* [orange\_led](#arduino_nicla_sense_env.orange_led)
-  * [OrangeLED](#arduino_nicla_sense_env.orange_led.OrangeLED)
-    * [brightness](#arduino_nicla_sense_env.orange_led.OrangeLED.brightness)
-    * [brightness](#arduino_nicla_sense_env.orange_led.OrangeLED.brightness)
-    * [set\_brightness](#arduino_nicla_sense_env.orange_led.OrangeLED.set_brightness)
-    * [error\_status\_enabled](#arduino_nicla_sense_env.orange_led.OrangeLED.error_status_enabled)
-    * [error\_status\_enabled](#arduino_nicla_sense_env.orange_led.OrangeLED.error_status_enabled)
-    * [set\_error\_status\_enabled](#arduino_nicla_sense_env.orange_led.OrangeLED.set_error_status_enabled)
 * [constants](#arduino_nicla_sense_env.constants)
-* [i2c\_device](#arduino_nicla_sense_env.i2c_device)
-  * [I2CHelper](#arduino_nicla_sense_env.i2c_device.I2CHelper)
-    * [get\_interface](#arduino_nicla_sense_env.i2c_device.I2CHelper.get_interface)
-  * [I2CDevice](#arduino_nicla_sense_env.i2c_device.I2CDevice)
-    * [\_\_init\_\_](#arduino_nicla_sense_env.i2c_device.I2CDevice.__init__)
-    * [device\_address](#arduino_nicla_sense_env.i2c_device.I2CDevice.device_address)
-    * [connected](#arduino_nicla_sense_env.i2c_device.I2CDevice.connected)
-* [temperature\_humidity\_sensor](#arduino_nicla_sense_env.temperature_humidity_sensor)
-  * [TemperatureHumiditySensor](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor)
-    * [temperature](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.temperature)
-    * [humidity](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.humidity)
-    * [enabled](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled)
-    * [enabled](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled)
-    * [set\_enabled](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.set_enabled)
 * [outdoor\_air\_quality\_sensor](#arduino_nicla_sense_env.outdoor_air_quality_sensor)
   * [OutdoorAirQualitySensor](#arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor)
     * [air\_quality\_index](#arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.air_quality_index)
@@ -47,6 +40,30 @@
     * [enabled](#arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.enabled)
     * [enabled](#arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.enabled)
     * [set\_enabled](#arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.set_enabled)
+* [temperature\_humidity\_sensor](#arduino_nicla_sense_env.temperature_humidity_sensor)
+  * [TemperatureHumiditySensor](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor)
+    * [temperature](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.temperature)
+    * [humidity](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.humidity)
+    * [enabled](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled)
+    * [enabled](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled)
+    * [set\_enabled](#arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.set_enabled)
+* [indoor\_air\_quality\_sensor](#arduino_nicla_sense_env.indoor_air_quality_sensor)
+  * [IndoorAirQualitySensor](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor)
+    * [sulfur\_odor](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.sulfur_odor)
+    * [odor\_intensity](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.odor_intensity)
+    * [ethanol](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.ethanol)
+    * [co2](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.co2)
+    * [tvoc](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.tvoc)
+    * [air\_quality](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality)
+    * [air\_quality\_interpreted](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality_interpreted)
+    * [relative\_air\_quality](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.relative_air_quality)
+    * [mode](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode)
+    * [mode](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode)
+    * [set\_mode](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_mode)
+    * [mode\_string](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode_string)
+    * [enabled](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled)
+    * [enabled](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled)
+    * [set\_enabled](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_enabled)
 * [nicla\_sense\_env](#arduino_nicla_sense_env.nicla_sense_env)
   * [NiclaSenseEnv](#arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv)
     * [persist\_settings](#arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.persist_settings)
@@ -74,156 +91,6 @@
     * [set\_debugging\_enabled](#arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.set_debugging_enabled)
     * [device\_address](#arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.device_address)
     * [set\_device\_address](#arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.set_device_address)
-* [indoor\_air\_quality\_sensor](#arduino_nicla_sense_env.indoor_air_quality_sensor)
-  * [IndoorAirQualitySensor](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor)
-    * [sulfur\_odor](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.sulfur_odor)
-    * [odor\_intensity](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.odor_intensity)
-    * [ethanol](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.ethanol)
-    * [co2](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.co2)
-    * [tvoc](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.tvoc)
-    * [air\_quality](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality)
-    * [air\_quality\_interpreted](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality_interpreted)
-    * [relative\_air\_quality](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.relative_air_quality)
-    * [mode](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode)
-    * [mode](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode)
-    * [set\_mode](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_mode)
-    * [mode\_string](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode_string)
-    * [enabled](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled)
-    * [enabled](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled)
-    * [set\_enabled](#arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_enabled)
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED"></a>
-
-## class `RGBLED`
-
-```python
-class RGBLED(I2CDevice)
-```
-
-This class allows to control the RGB LED on the Nicla Sense Env board.
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED.enable_indoor_air_quality_status"></a>
-
-### `enable_indoor_air_quality_status`
-
-```python
-def enable_indoor_air_quality_status(brightness: int | None = None,
-                                     persist: bool = False) -> bool
-```
-
-Makes the RGB LED show the indoor air quality. (Green = Good, Yellow = Medium, Red = Bad)
-To do so it sets all RGB LED colors to 0 and sets the brightness to the specified value.
-
-**Arguments**:
-
-- `brightness` _int, optional_ - The brightness of the RGB LED.
-  If None, the current brightness will be used.
-- `persist` _bool, optional_ - Whether to persist the setting to flash memory.
-  When persist is True, the brightness will also be persisted.
-  
-
-**Returns**:
-
-- `bool` - True if the operation was successful, False otherwise.
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED.set_color"></a>
-
-### `set_color`
-
-```python
-def set_color(color: tuple[int, int, int, int | None],
-              persist: bool = False) -> bool
-```
-
-Sets the RGB LED to the specified color.
-Note: A value of 0, 0, 0 will set the color based on the IAQ value from the Indoor Air Quality sensor.
-
-**Arguments**:
-
-- `color` _tuple[int, int, int]_ - The RGB color components red, green, blue and brightness.
-  The range for each value is 0 to 255.
-- `brightness` _int, optional_ - The brightness of the RGB LED. Range is 0 to 255.
-  If None, the current brightness will be used.
-- `persist` _bool, optional_ - Whether to persist the setting to flash memory.
-  When persist is True, the brightness will also be persisted.
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED.color"></a>
-
-### `color`
-
-```python
-@property
-def color() -> tuple[int, int, int]
-```
-
-Gets the RGB LED color.
-
-**Returns**:
-
-  tuple[int, int, int]: The RGB LED color. (red, green, blue)
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED.color"></a>
-
-### `color`
-
-```python
-@color.setter
-def color(color: tuple[int, int, int, int | None]) -> None
-```
-
-Sets the RGB LED color.
-Use `set_color` with `persist` set to True to make the change persistent.
-
-**Arguments**:
-
-- `colors` _tuple[int, int, int, int]_ - The RGB color components red, green, blue and brightness.
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED.brightness"></a>
-
-### `brightness`
-
-```python
-@property
-def brightness() -> int
-```
-
-Gets the brightness of the RGB LED.
-
-**Returns**:
-
-- `int` - The brightness of the RGB LED. Range is 0 to 255.
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED.brightness"></a>
-
-### `brightness`
-
-```python
-@brightness.setter
-def brightness(brightness: int) -> None
-```
-
-Sets the brightness of the RGB LED.
-Use `set_brightness` with `persist` set to True to make the change persistent.
-
-**Arguments**:
-
-- `brightness` _int_ - The brightness of the RGB LED. Range is 0 to 255.
-
-<a id="arduino_nicla_sense_env.rgb_led.RGBLED.set_brightness"></a>
-
-### `set_brightness`
-
-```python
-def set_brightness(brightness: int, persist: bool = False) -> bool
-```
-
-Sets the brightness of the RGB LED.
-
-**Arguments**:
-
-- `brightness` _int_ - The brightness of the RGB LED. Range is 0 to 255.
-- `persist` _bool, optional_ - Whether to persist the setting to flash memory.
-  When persist is True, the color will also be persisted.
 
 <a id="arduino_nicla_sense_env.orange_led.OrangeLED"></a>
 
@@ -366,25 +233,12 @@ class I2CDevice()
 
 Represents an I2C device connected to a bus.
 
-Properties
-----------
-DEFAULT_DEVICE_ADDRESS : int
-    The default I2C address of the device.
-bus : I2C
-    The I2C bus to use.
-device_address : int
-    The I2C address of the device.
-connected : bool
-    Checks if the device is connected to the I2C bus.
+**Attributes**:
 
-Methods
--------
-__init__(self, bus=None, device_address=DEFAULT_DEVICE_ADDRESS)
-    Initializes the I2C device.
-_write_to_register(self, register, data)
-    Writes data to the specified register over I2C.
-_read_from_register(self, register)
-    Reads data from the specified register over I2C.
+- `DEFAULT_DEVICE_ADDRESS` _int_ - The default I2C address of the device.
+- `bus` _I2C_ - The I2C bus to use.
+- `device_address` _int_ - The I2C address of the device.
+  connected (bool):Checks if the device is connected to the I2C bus.
 
 <a id="arduino_nicla_sense_env.i2c_device.I2CDevice.__init__"></a>
 
@@ -432,100 +286,138 @@ Checks if the device is connected to the I2C bus.
 
 - `bool` - True if the device is connected, False otherwise.
 
-<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor"></a>
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED"></a>
 
-## class `TemperatureHumiditySensor`
-
-```python
-class TemperatureHumiditySensor(I2CDevice)
-```
-
-Represents a HS4001 temperature and humidity sensor connected to an I2C bus.
-This class provides properties to read the temperature and humidity from the sensor.
-
-Properties
--------
-temperature(self)
-    Gets the temperature in degrees Celsius from the HS4001 sensor.
-humidity(self)
-    Gets the humidity from the HS4001 sensor.
-
-<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.temperature"></a>
-
-### `temperature`
+## class `RGBLED`
 
 ```python
-@property
-def temperature() -> float | None
+class RGBLED(I2CDevice)
 ```
 
-Gets the temperature in degrees Celsius from the HS4001 sensor.
+This class allows to control the RGB LED on the Nicla Sense Env board.
 
-**Returns**:
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED.enable_indoor_air_quality_status"></a>
 
-- `float` - The temperature in degrees Celsius.
-
-<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.humidity"></a>
-
-### `humidity`
+### `enable_indoor_air_quality_status`
 
 ```python
-@property
-def humidity() -> float
+def enable_indoor_air_quality_status(brightness: int | None = None,
+                                     persist: bool = False) -> bool
 ```
 
-Gets the humidity from the HS4001 sensor.
-
-**Returns**:
-
-- `float` - The humidity in %RH.
-
-<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled"></a>
-
-### `enabled`
-
-```python
-@property
-def enabled() -> bool
-```
-
-Gets the temperature sensor enabled status.
-
-**Returns**:
-
-- `bool` - True if the temperature sensor is enabled, False otherwise.
-
-<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled"></a>
-
-### `enabled`
-
-```python
-@enabled.setter
-def enabled(is_enabled: bool)
-```
-
-Enables or disables the temperature sensor.
-Use `set_enabled` with `persist` set to True to make the change persistent.
+Makes the RGB LED show the indoor air quality. (Green = Good, Yellow = Medium, Red = Bad)
+To do so it sets all RGB LED colors to 0 and sets the brightness to the specified value.
 
 **Arguments**:
 
-- `is_enabled` _bool_ - Whether to enable or disable the temperature sensor.
+- `brightness` _int, optional_ - The brightness of the RGB LED.
+  If None, the current brightness will be used.
+- `persist` _bool, optional_ - Whether to persist the setting to flash memory.
+  When persist is True, the brightness will also be persisted.
+  
 
-<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.set_enabled"></a>
+**Returns**:
 
-### `set_enabled`
+- `bool` - True if the operation was successful, False otherwise.
+
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED.set_color"></a>
+
+### `set_color`
 
 ```python
-def set_enabled(is_enabled: bool, persist=False) -> bool
+def set_color(color: tuple[int, int, int, int | None],
+              persist: bool = False) -> bool
 ```
 
-Enables or disables the temperature sensor and persists the setting to flash memory.
+Sets the RGB LED to the specified color.
+Note: A value of 0, 0, 0 will set the color based on the IAQ value from the Indoor Air Quality sensor.
 
 **Arguments**:
 
-- `is_enabled` _bool_ - Whether to enable or disable the temperature sensor.
-- `persist` _bool_ - Whether to persist the setting to flash memory.
-  When persist is True, the mode setting of IndoorAirQualitySensor and OutdoorAirQualitySensor will also be persisted.
+- `color` _tuple[int, int, int]_ - The RGB color components red, green, blue and brightness.
+  The range for each value is 0 to 255.
+- `brightness` _int, optional_ - The brightness of the RGB LED. Range is 0 to 255.
+  If None, the current brightness will be used.
+- `persist` _bool, optional_ - Whether to persist the setting to flash memory.
+  When persist is True, the brightness will also be persisted.
+
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED.color"></a>
+
+### `color`
+
+```python
+@property
+def color() -> tuple[int, int, int]
+```
+
+Gets the RGB LED color.
+
+**Returns**:
+
+  tuple[int, int, int]: The RGB LED color. (red, green, blue)
+
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED.color"></a>
+
+### `color`
+
+```python
+@color.setter
+def color(color: tuple[int, int, int, int | None]) -> None
+```
+
+Sets the RGB LED color.
+Use `set_color` with `persist` set to True to make the change persistent.
+
+**Arguments**:
+
+- `colors` _tuple[int, int, int, int]_ - The RGB color components red, green, blue and brightness.
+
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED.brightness"></a>
+
+### `brightness`
+
+```python
+@property
+def brightness() -> int
+```
+
+Gets the brightness of the RGB LED.
+
+**Returns**:
+
+- `int` - The brightness of the RGB LED. Range is 0 to 255.
+
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED.brightness"></a>
+
+### `brightness`
+
+```python
+@brightness.setter
+def brightness(brightness: int) -> None
+```
+
+Sets the brightness of the RGB LED.
+Use `set_brightness` with `persist` set to True to make the change persistent.
+
+**Arguments**:
+
+- `brightness` _int_ - The brightness of the RGB LED. Range is 0 to 255.
+
+<a id="arduino_nicla_sense_env.rgb_led.RGBLED.set_brightness"></a>
+
+### `set_brightness`
+
+```python
+def set_brightness(brightness: int, persist: bool = False) -> bool
+```
+
+Sets the brightness of the RGB LED.
+
+**Arguments**:
+
+- `brightness` _int_ - The brightness of the RGB LED. Range is 0 to 255.
+- `persist` _bool, optional_ - Whether to persist the setting to flash memory.
+  When persist is True, the color will also be persisted.
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor"></a>
 
@@ -744,6 +636,390 @@ When the sensor is enabled after being disabled, the sensor will go back to the 
 - `is_enabled` _bool_ - Whether to enable or disable the outdoor air quality sensor.
 - `persist` _bool_ - Whether to persist the setting to flash memory.
   When persist is True, the mode setting of IndoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
+
+<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor"></a>
+
+## class `TemperatureHumiditySensor`
+
+```python
+class TemperatureHumiditySensor(I2CDevice)
+```
+
+Represents a HS4001 temperature and humidity sensor connected to an I2C bus.
+This class provides properties to read the temperature and humidity from the sensor.
+
+Properties
+-------
+temperature(self)
+    Gets the temperature in degrees Celsius from the HS4001 sensor.
+humidity(self)
+    Gets the humidity from the HS4001 sensor.
+
+<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.temperature"></a>
+
+### `temperature`
+
+```python
+@property
+def temperature() -> float | None
+```
+
+Gets the temperature in degrees Celsius from the HS4001 sensor.
+
+**Returns**:
+
+- `float` - The temperature in degrees Celsius.
+
+<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.humidity"></a>
+
+### `humidity`
+
+```python
+@property
+def humidity() -> float
+```
+
+Gets the humidity from the HS4001 sensor.
+
+**Returns**:
+
+- `float` - The humidity in %RH.
+
+<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled"></a>
+
+### `enabled`
+
+```python
+@property
+def enabled() -> bool
+```
+
+Gets the temperature sensor enabled status.
+
+**Returns**:
+
+- `bool` - True if the temperature sensor is enabled, False otherwise.
+
+<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled"></a>
+
+### `enabled`
+
+```python
+@enabled.setter
+def enabled(is_enabled: bool)
+```
+
+Enables or disables the temperature sensor.
+Use `set_enabled` with `persist` set to True to make the change persistent.
+
+**Arguments**:
+
+- `is_enabled` _bool_ - Whether to enable or disable the temperature sensor.
+
+<a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.set_enabled"></a>
+
+### `set_enabled`
+
+```python
+def set_enabled(is_enabled: bool, persist=False) -> bool
+```
+
+Enables or disables the temperature sensor and persists the setting to flash memory.
+
+**Arguments**:
+
+- `is_enabled` _bool_ - Whether to enable or disable the temperature sensor.
+- `persist` _bool_ - Whether to persist the setting to flash memory.
+  When persist is True, the mode setting of IndoorAirQualitySensor and OutdoorAirQualitySensor will also be persisted.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor"></a>
+
+## class `IndoorAirQualitySensor`
+
+```python
+class IndoorAirQualitySensor(I2CDevice)
+```
+
+Class for interacting with the indoor air quality sensor.
+
+Properties
+----
+    sulfur_odor (bool): 
+        True if the sulfur odor is detected, False otherwise.
+    odor_intensity (float): 
+        The odor intensity.
+    ethanol (float): 
+        The ethanol concentration in ppm.
+    co2 (float): 
+        The CO2 concentration in ppm.
+    tvoc (float): 
+        The TVOC concentration in mg/m3.
+    air_quality (float): 
+        The indoor air quality. Range is 0 to 5.
+    air_quality_interpreted (str): 
+        The indoor air quality.
+    relative_air_quality (float): 
+        The relative indoor air quality. Range is 0 to 100.
+    mode (int): 
+        The indoor air quality sensor mode.
+    mode_string (str): 
+        The indoor air quality sensor mode.
+    enabled (bool): 
+        True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.sulfur_odor"></a>
+
+### `sulfur_odor`
+
+```python
+@property
+def sulfur_odor() -> bool
+```
+
+Gets the sulfur odor status from the ZMOD4410 sensor.
+
+**Returns**:
+
+- `bool` - True if the sulfur odor is detected, False otherwise.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.odor_intensity"></a>
+
+### `odor_intensity`
+
+```python
+@property
+def odor_intensity() -> float
+```
+
+Gets the odor intensity from the ZMOD4410 sensor.
+
+**Returns**:
+
+- `float` - The odor intensity.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.ethanol"></a>
+
+### `ethanol`
+
+```python
+@property
+def ethanol() -> float
+```
+
+Gets the ethanol concentration from the ZMOD4410 sensor.
+
+**Returns**:
+
+- `float` - The ethanol concentration in ppm.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.co2"></a>
+
+### `co2`
+
+```python
+@property
+def co2() -> float
+```
+
+Gets the CO2 concentration from the ZMOD4410 sensor.
+
+**Returns**:
+
+- `float` - The CO2 concentration in ppm.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.tvoc"></a>
+
+### `tvoc`
+
+```python
+@property
+def tvoc() -> float
+```
+
+Gets the TVOC concentration from the ZMOD4410 sensor.
+
+**Returns**:
+
+- `float` - The TVOC concentration in mg/m3.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality"></a>
+
+### `air_quality`
+
+```python
+@property
+def air_quality() -> float
+```
+
+Gets the indoor air quality from the ZMOD4410 sensor.
+
+**Returns**:
+
+- `float` - The indoor air quality. Range is 0 to 5 where 0 is the best air quality and 5 is the worst.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality_interpreted"></a>
+
+### `air_quality_interpreted`
+
+```python
+@property
+def air_quality_interpreted() -> str
+```
+
+Gets the indoor air quality from the ZMOD4410 sensor and interprets it in terms of air quality.
+
+**Returns**:
+
+- `str` - The indoor air quality. Possible values are: Very Good, Good, Medium, Poor, Bad.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.relative_air_quality"></a>
+
+### `relative_air_quality`
+
+```python
+@property
+def relative_air_quality() -> float
+```
+
+Gets the relative indoor air quality from the ZMOD4410 sensor.
+
+**Returns**:
+
+- `float` - The relative indoor air quality. Range is 0 to 100.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode"></a>
+
+### `mode`
+
+```python
+@property
+def mode() -> int
+```
+
+Gets the indoor air quality sensor mode.
+
+**Returns**:
+
+- `int` - The indoor air quality sensor mode.
+  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
+  This property represents the numeric value of the mode. See IndoorAirQualitySensorMode for more information.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode"></a>
+
+### `mode`
+
+```python
+@mode.setter
+def mode(sensor_mode: int)
+```
+
+Sets the indoor air quality sensor mode.
+Use `set_mode` with `persist` set to True to make the change persistent.
+
+Note on cleaning mode:
+The cleaning mode performs a thermal cleaning cycle of the MOx element. It can eliminate some light pollution
+residues from production and packaging and improves the stabilization processes in the sensor.
+The function heats up the sensor to allow thermal desorption and catalytic combustion of the residues.
+The cleaning cycle can be executed only once in the sensor lifetime and shall be started after product assembly.
+Please ensure cleaning was completed before power-off/reset and do not interrupt while cleaning.
+The cleaning procedure takes 1 minute (blocking).
+
+Note on PBAQ mode:
+The PBAQ mode is a special mode to perform highly accurate and consistent air quality readings.
+It measures the total volatile organic compounds (TVOC) and equivalent ethanol (EtOH) concentration
+to meet Public Building Air Quality (PBAQ) standards.
+
+Note on low power IAQ mode:
+This mode offers a much lower power consumption while keeping accurate and consistent sensor readings.
+For more accurate readings, use the default indoor air quality mode.
+
+**Arguments**:
+
+- `sensor_mode` _int_ - The indoor air quality sensor mode.
+  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
+  These values are contained in IndoorAirQualitySensorMode.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_mode"></a>
+
+### `set_mode`
+
+```python
+def set_mode(sensor_mode: int, persist=False) -> bool
+```
+
+Sets the indoor air quality sensor mode and persists the setting to flash memory.
+
+**Arguments**:
+
+- `sensor_mode` _int_ - The indoor air quality sensor mode.
+  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
+  These values are contained in IndoorAirQualitySensorMode.
+- `persist` _bool_ - Whether to persist the setting to flash memory.
+  When persist is True, the mode setting of OutdoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode_string"></a>
+
+### `mode_string`
+
+```python
+@property
+def mode_string() -> str | None
+```
+
+Gets the indoor air quality sensor mode as a string.
+
+**Returns**:
+
+- `str` - The indoor air quality sensor mode.
+  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled"></a>
+
+### `enabled`
+
+```python
+@property
+def enabled() -> bool
+```
+
+Gets the indoor air quality sensor enabled status.
+
+**Returns**:
+
+- `bool` - True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled"></a>
+
+### `enabled`
+
+```python
+@enabled.setter
+def enabled(is_enabled: bool)
+```
+
+Enables or disables the indoor air quality sensor.
+Use `set_enabled` with `persist` set to True to make the change persistent.
+When the sensor is enabled after being disabled, the sensor will go back to the default mode.
+
+**Arguments**:
+
+- `is_enabled` _bool_ - Whether to enable or disable the indoor air quality sensor.
+
+<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_enabled"></a>
+
+### `set_enabled`
+
+```python
+def set_enabled(is_enabled: bool, persist=False) -> bool
+```
+
+Enables or disables the indoor air quality sensor and persists the setting to flash memory.
+
+**Arguments**:
+
+- `is_enabled` _bool_ - Whether to enable or disable the indoor air quality sensor.
+- `persist` _bool_ - Whether to persist the setting to flash memory.
+  When persist is True, the mode setting of OutdoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv"></a>
 
@@ -1165,293 +1441,4 @@ Sets the I2C address of the device.
 
 - `address` _int_ - The new I2C address. Valid values are 0 to 127.
 - `persist` _bool_ - Whether to persist the change to flash memory.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor"></a>
-
-## class `IndoorAirQualitySensor`
-
-```python
-class IndoorAirQualitySensor(I2CDevice)
-```
-
-Class for interacting with the indoor air quality sensor.
-
-Properties
-----
-    sulfur_odor (bool): 
-        True if the sulfur odor is detected, False otherwise.
-    odor_intensity (float): 
-        The odor intensity.
-    ethanol (float): 
-        The ethanol concentration in ppm.
-    co2 (float): 
-        The CO2 concentration in ppm.
-    tvoc (float): 
-        The TVOC concentration in mg/m3.
-    air_quality (float): 
-        The indoor air quality. Range is 0 to 5.
-    air_quality_interpreted (str): 
-        The indoor air quality.
-    relative_air_quality (float): 
-        The relative indoor air quality. Range is 0 to 100.
-    mode (int): 
-        The indoor air quality sensor mode.
-    mode_string (str): 
-        The indoor air quality sensor mode.
-    enabled (bool): 
-        True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.sulfur_odor"></a>
-
-### `sulfur_odor`
-
-```python
-@property
-def sulfur_odor() -> bool
-```
-
-Gets the sulfur odor status from the ZMOD4410 sensor.
-
-**Returns**:
-
-- `bool` - True if the sulfur odor is detected, False otherwise.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.odor_intensity"></a>
-
-### `odor_intensity`
-
-```python
-@property
-def odor_intensity() -> float
-```
-
-Gets the odor intensity from the ZMOD4410 sensor.
-
-**Returns**:
-
-- `float` - The odor intensity.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.ethanol"></a>
-
-### `ethanol`
-
-```python
-@property
-def ethanol() -> float
-```
-
-Gets the ethanol concentration from the ZMOD4410 sensor.
-
-**Returns**:
-
-- `float` - The ethanol concentration in ppm.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.co2"></a>
-
-### `co2`
-
-```python
-@property
-def co2() -> float
-```
-
-Gets the CO2 concentration from the ZMOD4410 sensor.
-
-**Returns**:
-
-- `float` - The CO2 concentration in ppm.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.tvoc"></a>
-
-### `tvoc`
-
-```python
-@property
-def tvoc() -> float
-```
-
-Gets the TVOC concentration from the ZMOD4410 sensor.
-
-**Returns**:
-
-- `float` - The TVOC concentration in mg/m3.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality"></a>
-
-### `air_quality`
-
-```python
-@property
-def air_quality() -> float
-```
-
-Gets the indoor air quality from the ZMOD4410 sensor.
-
-**Returns**:
-
-- `float` - The indoor air quality. Range is 0 to 5 where 0 is the best air quality and 5 is the worst.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality_interpreted"></a>
-
-### `air_quality_interpreted`
-
-```python
-@property
-def air_quality_interpreted() -> str
-```
-
-Gets the indoor air quality from the ZMOD4410 sensor and interprets it in terms of air quality.
-
-**Returns**:
-
-- `str` - The indoor air quality. Possible values are: Very Good, Good, Medium, Poor, Bad.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.relative_air_quality"></a>
-
-### `relative_air_quality`
-
-```python
-@property
-def relative_air_quality() -> float
-```
-
-Gets the relative indoor air quality from the ZMOD4410 sensor.
-
-**Returns**:
-
-- `float` - The relative indoor air quality. Range is 0 to 100.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode"></a>
-
-### `mode`
-
-```python
-@property
-def mode() -> int
-```
-
-Gets the indoor air quality sensor mode.
-
-**Returns**:
-
-- `int` - The indoor air quality sensor mode.
-  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
-  This property represents the numeric value of the mode. See IndoorAirQualitySensorMode for more information.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode"></a>
-
-### `mode`
-
-```python
-@mode.setter
-def mode(sensor_mode: int)
-```
-
-Sets the indoor air quality sensor mode.
-Use `set_mode` with `persist` set to True to make the change persistent.
-
-Note on cleaning mode:
-The cleaning mode performs a thermal cleaning cycle of the MOx element. It can eliminate some light pollution
-residues from production and packaging and improves the stabilization processes in the sensor.
-The function heats up the sensor to allow thermal desorption and catalytic combustion of the residues.
-The cleaning cycle can be executed only once in the sensor lifetime and shall be started after product assembly.
-Please ensure cleaning was completed before power-off/reset and do not interrupt while cleaning.
-The cleaning procedure takes 1 minute (blocking).
-
-Note on PBAQ mode:
-The PBAQ mode is a special mode to perform highly accurate and consistent air quality readings.
-It measures the total volatile organic compounds (TVOC) and equivalent ethanol (EtOH) concentration
-to meet Public Building Air Quality (PBAQ) standards.
-
-Note on low power IAQ mode:
-This mode offers a much lower power consumption while keeping accurate and consistent sensor readings.
-For more accurate readings, use the default indoor air quality mode.
-
-**Arguments**:
-
-- `sensor_mode` _int_ - The indoor air quality sensor mode.
-  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
-  These values are contained in IndoorAirQualitySensorMode.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_mode"></a>
-
-### `set_mode`
-
-```python
-def set_mode(sensor_mode: int, persist=False) -> bool
-```
-
-Sets the indoor air quality sensor mode and persists the setting to flash memory.
-
-**Arguments**:
-
-- `sensor_mode` _int_ - The indoor air quality sensor mode.
-  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
-  These values are contained in IndoorAirQualitySensorMode.
-- `persist` _bool_ - Whether to persist the setting to flash memory.
-  When persist is True, the mode setting of OutdoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode_string"></a>
-
-### `mode_string`
-
-```python
-@property
-def mode_string() -> str | None
-```
-
-Gets the indoor air quality sensor mode as a string.
-
-**Returns**:
-
-- `str` - The indoor air quality sensor mode.
-  Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled"></a>
-
-### `enabled`
-
-```python
-@property
-def enabled() -> bool
-```
-
-Gets the indoor air quality sensor enabled status.
-
-**Returns**:
-
-- `bool` - True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled"></a>
-
-### `enabled`
-
-```python
-@enabled.setter
-def enabled(is_enabled: bool)
-```
-
-Enables or disables the indoor air quality sensor.
-Use `set_enabled` with `persist` set to True to make the change persistent.
-When the sensor is enabled after being disabled, the sensor will go back to the default mode.
-
-**Arguments**:
-
-- `is_enabled` _bool_ - Whether to enable or disable the indoor air quality sensor.
-
-<a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_enabled"></a>
-
-### `set_enabled`
-
-```python
-def set_enabled(is_enabled: bool, persist=False) -> bool
-```
-
-Enables or disables the indoor air quality sensor and persists the setting to flash memory.
-
-**Arguments**:
-
-- `is_enabled` _bool_ - Whether to enable or disable the indoor air quality sensor.
-- `persist` _bool_ - Whether to persist the setting to flash memory.
-  When persist is True, the mode setting of OutdoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
 
