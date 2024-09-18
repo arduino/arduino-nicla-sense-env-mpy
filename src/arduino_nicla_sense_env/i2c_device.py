@@ -38,25 +38,11 @@ class I2CDevice:
     """
     Represents an I2C device connected to a bus.
 
-    Properties
-    ----------
-    DEFAULT_DEVICE_ADDRESS : int
-        The default I2C address of the device.
-    bus : I2C
-        The I2C bus to use.
-    device_address : int
-        The I2C address of the device.
-    connected : bool
-        Checks if the device is connected to the I2C bus.
-
-    Methods
-    -------
-    __init__(self, bus=None, device_address=DEFAULT_DEVICE_ADDRESS)
-        Initializes the I2C device.
-    _write_to_register(self, register, data)
-        Writes data to the specified register over I2C.
-    _read_from_register(self, register)
-        Reads data from the specified register over I2C.
+    Attributes:
+        DEFAULT_DEVICE_ADDRESS (int): The default I2C address of the device.
+        bus (I2C): The I2C bus to use.
+        device_address (int): The I2C address of the device.
+        connected (bool):Checks if the device is connected to the I2C bus.
     """
 
     # The default I2C address of Nicla Sense Env
