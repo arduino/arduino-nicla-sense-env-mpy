@@ -15,31 +15,6 @@ class IndoorAirQualitySensorMode:
 class IndoorAirQualitySensor(I2CDevice):
     """
     Class for interacting with the indoor air quality sensor.
-
-    Properties
-    ----
-        sulfur_odor (bool): 
-            True if the sulfur odor is detected, False otherwise.
-        odor_intensity (float): 
-            The odor intensity.
-        ethanol (float): 
-            The ethanol concentration in ppm.
-        co2 (float): 
-            The CO2 concentration in ppm.
-        tvoc (float): 
-            The TVOC concentration in mg/m3.
-        air_quality (float): 
-            The indoor air quality. Range is 0 to 5.
-        air_quality_interpreted (str): 
-            The indoor air quality.
-        relative_air_quality (float): 
-            The relative indoor air quality. Range is 0 to 100.
-        mode (int): 
-            The indoor air quality sensor mode.
-        mode_string (str): 
-            The indoor air quality sensor mode.
-        enabled (bool): 
-            True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
     """
 
     @property
@@ -139,8 +114,7 @@ class IndoorAirQualitySensor(I2CDevice):
         """
         Gets the indoor air quality sensor mode.
         
-        Returns
-        ----
+        Returns:
             int: The indoor air quality sensor mode.
             Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
             This property represents the numeric value of the mode. See IndoorAirQualitySensorMode for more information.            
@@ -172,10 +146,8 @@ class IndoorAirQualitySensor(I2CDevice):
         This mode offers a much lower power consumption while keeping accurate and consistent sensor readings.
         For more accurate readings, use the default indoor air quality mode.
 
-        Parameters
-        ----
-            sensor_mode (int): 
-                The indoor air quality sensor mode.
+        Parameters:
+            sensor_mode (int): The indoor air quality sensor mode.
                 Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
                 These values are contained in IndoorAirQualitySensorMode.
         """
@@ -192,14 +164,11 @@ class IndoorAirQualitySensor(I2CDevice):
         """
         Sets the indoor air quality sensor mode and persists the setting to flash memory.
 
-        Parameters
-        ----
-            sensor_mode (int): 
-                The indoor air quality sensor mode.
+        Parameters:
+            sensor_mode (int): The indoor air quality sensor mode.
                 Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
                 These values are contained in IndoorAirQualitySensorMode.
-            persist (bool): 
-                Whether to persist the setting to flash memory.
+            persist (bool): Whether to persist the setting to flash memory.
                 When persist is True, the mode setting of OutdoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
         """
         self.mode = sensor_mode
@@ -212,8 +181,7 @@ class IndoorAirQualitySensor(I2CDevice):
         """
         Gets the indoor air quality sensor mode as a string.
 
-        Returns
-        ----
+        Returns:
             str: The indoor air quality sensor mode.
             Possible values are: POWER_DOWN, CLEANING, INDOOR_AIR_QUALITY, INDOOR_AIR_QUALITY_LOW_POWER, SULFUR.
         """
@@ -229,8 +197,7 @@ class IndoorAirQualitySensor(I2CDevice):
         """
         Gets the indoor air quality sensor enabled status.
 
-        Returns
-        ----
+        Returns:
             bool: True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
         """
         mode = self.mode
@@ -243,10 +210,8 @@ class IndoorAirQualitySensor(I2CDevice):
         Use `set_enabled` with `persist` set to True to make the change persistent.
         When the sensor is enabled after being disabled, the sensor will go back to the default mode.
 
-        Parameters
-        ----
-            is_enabled (bool): 
-                Whether to enable or disable the indoor air quality sensor.
+        Parameters:
+            is_enabled (bool): Whether to enable or disable the indoor air quality sensor.
         """
         # Ignore request if the sensor is already in desired state to maintain the current mode
         if is_enabled == self.enabled:
@@ -260,12 +225,9 @@ class IndoorAirQualitySensor(I2CDevice):
         """
         Enables or disables the indoor air quality sensor and persists the setting to flash memory.
 
-        Parameters
-        ----
-            is_enabled (bool): 
-                Whether to enable or disable the indoor air quality sensor.
-            persist (bool): 
-                Whether to persist the setting to flash memory.
+        Parameters:
+            is_enabled (bool): Whether to enable or disable the indoor air quality sensor.
+            persist (bool): Whether to persist the setting to flash memory.
                 When persist is True, the mode setting of OutdoorAirQualitySensor and TemperatureHumiditySensor will also be persisted.
         """
         self.enabled = is_enabled

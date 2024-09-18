@@ -38,25 +38,11 @@ class I2CDevice:
     """
     Represents an I2C device connected to a bus.
 
-    Properties
-    ----------
-    DEFAULT_DEVICE_ADDRESS : int
-        The default I2C address of the device.
-    bus : I2C
-        The I2C bus to use.
-    device_address : int
-        The I2C address of the device.
-    connected : bool
-        Checks if the device is connected to the I2C bus.
-
-    Methods
-    -------
-    __init__(self, bus=None, device_address=DEFAULT_DEVICE_ADDRESS)
-        Initializes the I2C device.
-    _write_to_register(self, register, data)
-        Writes data to the specified register over I2C.
-    _read_from_register(self, register)
-        Reads data from the specified register over I2C.
+    Attributes:
+        DEFAULT_DEVICE_ADDRESS (int): The default I2C address of the device.
+        bus (I2C): The I2C bus to use.
+        device_address (int): The I2C address of the device.
+        connected (bool):Checks if the device is connected to the I2C bus.
     """
 
     # The default I2C address of Nicla Sense Env
@@ -66,12 +52,9 @@ class I2CDevice:
         """
         A initializes the NiclaSenseEnv device.
 
-        Parameters
-        ----
-            bus (I2C, optional): 
-                The I2C bus to use. If None, the default bus will be used.
-            device_address (int, optional): 
-                The I2C address of the device. Defaults to 0x21.
+        Parameters:
+            bus (I2C, optional): The I2C bus to use. If None, the default bus will be used.
+            device_address (int, optional): The I2C address of the device. Defaults to 0x21.
         """
         
         if bus is None:
@@ -85,12 +68,9 @@ class I2CDevice:
         """
         Writes data to the specified register over I2C.
 
-        Parameters
-        ----
-            register (dict): 
-                The register to write to.
-            data (int/float): 
-                The data to write to the register.
+        Parameters:
+            register (dict): The register to write to.
+            data (int/float): The data to write to the register.
                 Number is converted into a byte array based on the register type and number of bytes.
                 The endianness is big-endian, lowest address is LSB, highest address is MSB.
         """
@@ -119,10 +99,8 @@ class I2CDevice:
         """
         Reads data from the specified register over I2C.
 
-        Parameters
-        ----
-            register (dict): 
-                The register to read from.
+        Parameters:
+            register (dict): The register to read from.
 
         Returns:
             int/float: The data read from the register. 
@@ -150,13 +128,10 @@ class I2CDevice:
         """
         Persists the value of the given register address to the flash memory.
 
-        Parameters
-        ----
-            register (dict): 
-                The register to persist.
+        Parameters:
+            register (dict): The register to persist.
 
-        Returns
-        ----
+        Returns:
             bool: True if the write was successful, False otherwise.
         """
         self._write_to_register(REGISTERS["defaults_register"], register["address"] | (1 << 7))
@@ -178,8 +153,7 @@ class I2CDevice:
         """
         Gets the I2C address of the device.
 
-        Returns
-        ----
+        Returns:
             int: The current I2C address.
         """
         return self._device_address

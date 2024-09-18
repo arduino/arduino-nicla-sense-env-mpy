@@ -5,13 +5,6 @@ class TemperatureHumiditySensor(I2CDevice):
     """
     Represents a HS4001 temperature and humidity sensor connected to an I2C bus.
     This class provides properties to read the temperature and humidity from the sensor.
-
-    Properties
-    -------
-    temperature(self)
-        Gets the temperature in degrees Celsius from the HS4001 sensor.
-    humidity(self)
-        Gets the humidity from the HS4001 sensor.
     """
 
     @property
@@ -34,8 +27,7 @@ class TemperatureHumiditySensor(I2CDevice):
         """
         Gets the humidity from the HS4001 sensor.
 
-        Returns
-        ----
+        Returns:
             float: The humidity in %RH.
         """
         return self._read_from_register(REGISTERS["humidity"])
@@ -46,8 +38,7 @@ class TemperatureHumiditySensor(I2CDevice):
         """
         Gets the temperature sensor enabled status.
 
-        Returns
-        ----
+        Returns:
             bool: True if the temperature sensor is enabled, False otherwise.
         """
         data = self._read_from_register(REGISTERS["status"])
@@ -59,10 +50,8 @@ class TemperatureHumiditySensor(I2CDevice):
         Enables or disables the temperature sensor.
         Use `set_enabled` with `persist` set to True to make the change persistent.
 
-        Parameters
-        ----
-            is_enabled (bool): 
-                Whether to enable or disable the temperature sensor.
+        Parameters:
+            is_enabled (bool): Whether to enable or disable the temperature sensor.
         """
         current_register_data = self._read_from_register(REGISTERS["status"])
 
@@ -77,12 +66,9 @@ class TemperatureHumiditySensor(I2CDevice):
         """
         Enables or disables the temperature sensor and persists the setting to flash memory.
 
-        Parameters
-        ----
-            is_enabled (bool): 
-                Whether to enable or disable the temperature sensor.
-            persist (bool): 
-                Whether to persist the setting to flash memory.
+        Parameters:
+            is_enabled (bool): Whether to enable or disable the temperature sensor.
+            persist (bool): Whether to persist the setting to flash memory.
                 When persist is True, the mode setting of IndoorAirQualitySensor and OutdoorAirQualitySensor will also be persisted.
         """
         self.enabled = is_enabled
