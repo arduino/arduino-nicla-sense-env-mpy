@@ -648,13 +648,6 @@ class TemperatureHumiditySensor(I2CDevice)
 Represents a HS4001 temperature and humidity sensor connected to an I2C bus.
 This class provides properties to read the temperature and humidity from the sensor.
 
-Properties
--------
-temperature(self)
-    Gets the temperature in degrees Celsius from the HS4001 sensor.
-humidity(self)
-    Gets the humidity from the HS4001 sensor.
-
 <a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.temperature"></a>
 
 ### `temperature`
@@ -741,31 +734,6 @@ class IndoorAirQualitySensor(I2CDevice)
 ```
 
 Class for interacting with the indoor air quality sensor.
-
-Properties
-----
-    sulfur_odor (bool): 
-        True if the sulfur odor is detected, False otherwise.
-    odor_intensity (float): 
-        The odor intensity.
-    ethanol (float): 
-        The ethanol concentration in ppm.
-    co2 (float): 
-        The CO2 concentration in ppm.
-    tvoc (float): 
-        The TVOC concentration in mg/m3.
-    air_quality (float): 
-        The indoor air quality. Range is 0 to 5.
-    air_quality_interpreted (str): 
-        The indoor air quality.
-    relative_air_quality (float): 
-        The relative indoor air quality. Range is 0 to 100.
-    mode (int): 
-        The indoor air quality sensor mode.
-    mode_string (str): 
-        The indoor air quality sensor mode.
-    enabled (bool): 
-        True if the indoor air quality sensor mode is POWER_DOWN, False otherwise.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.sulfur_odor"></a>
 
