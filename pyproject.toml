@@ -13,3 +13,10 @@ add_module_prefix = false
 render_toc = true
 render_toc_title = "Summary"
 render_module_header = false
+
+[tool.pydoc-markdown.renderer.header_level_by_type]
+Module = 1
+Class = 2
+Method = 3
+Function = 3
+Variable = 3

@@ -104,7 +104,7 @@ This class allows to control the RGB LED on the Nicla Sense Env board.
 
 <a id="arduino_nicla_sense_env.rgb_led.RGBLED.enable_indoor_air_quality_status"></a>
 
-#### `enable_indoor_air_quality_status`
+### `enable_indoor_air_quality_status`
 
 ```python
 def enable_indoor_air_quality_status(brightness: int | None = None,
@@ -128,7 +128,7 @@ To do so it sets all RGB LED colors to 0 and sets the brightness to the specifie
 
 <a id="arduino_nicla_sense_env.rgb_led.RGBLED.set_color"></a>
 
-#### `set_color`
+### `set_color`
 
 ```python
 def set_color(color: tuple[int, int, int, int | None],
@@ -149,7 +149,7 @@ Note: A value of 0, 0, 0 will set the color based on the IAQ value from the Indo
 
 <a id="arduino_nicla_sense_env.rgb_led.RGBLED.color"></a>
 
-#### `color`
+### `color`
 
 ```python
 @property
@@ -164,7 +164,7 @@ Gets the RGB LED color.
 
 <a id="arduino_nicla_sense_env.rgb_led.RGBLED.color"></a>
 
-#### `color`
+### `color`
 
 ```python
 @color.setter
@@ -180,7 +180,7 @@ Use `set_color` with `persist` set to True to make the change persistent.
 
 <a id="arduino_nicla_sense_env.rgb_led.RGBLED.brightness"></a>
 
-#### `brightness`
+### `brightness`
 
 ```python
 @property
@@ -195,7 +195,7 @@ Gets the brightness of the RGB LED.
 
 <a id="arduino_nicla_sense_env.rgb_led.RGBLED.brightness"></a>
 
-#### `brightness`
+### `brightness`
 
 ```python
 @brightness.setter
@@ -211,7 +211,7 @@ Use `set_brightness` with `persist` set to True to make the change persistent.
 
 <a id="arduino_nicla_sense_env.rgb_led.RGBLED.set_brightness"></a>
 
-#### `set_brightness`
+### `set_brightness`
 
 ```python
 def set_brightness(brightness: int, persist: bool = False) -> bool
@@ -237,7 +237,7 @@ This class allows to control the orange LED on the Nicla Sense Env board.
 
 <a id="arduino_nicla_sense_env.orange_led.OrangeLED.brightness"></a>
 
-#### `brightness`
+### `brightness`
 
 ```python
 @property
@@ -252,7 +252,7 @@ Gets the brightness of the orange LED.
 
 <a id="arduino_nicla_sense_env.orange_led.OrangeLED.brightness"></a>
 
-#### `brightness`
+### `brightness`
 
 ```python
 @brightness.setter
@@ -268,7 +268,7 @@ Use `set_brightness` with `persist` set to True to make the change persistent.
 
 <a id="arduino_nicla_sense_env.orange_led.OrangeLED.set_brightness"></a>
 
-#### `set_brightness`
+### `set_brightness`
 
 ```python
 def set_brightness(led_brightness: int, persist: bool = False) -> bool
@@ -284,7 +284,7 @@ Sets the brightness of the orange LED and persists the setting to flash memory.
 
 <a id="arduino_nicla_sense_env.orange_led.OrangeLED.error_status_enabled"></a>
 
-#### `error_status_enabled`
+### `error_status_enabled`
 
 ```python
 @property
@@ -296,7 +296,7 @@ When a board error condition occurs the LED blinks, independently of the brightn
 
 <a id="arduino_nicla_sense_env.orange_led.OrangeLED.error_status_enabled"></a>
 
-#### `error_status_enabled`
+### `error_status_enabled`
 
 ```python
 @error_status_enabled.setter
@@ -312,7 +312,7 @@ Use `set_error_status_enabled` with `persist` set to True to make the change per
 
 <a id="arduino_nicla_sense_env.orange_led.OrangeLED.set_error_status_enabled"></a>
 
-#### `set_error_status_enabled`
+### `set_error_status_enabled`
 
 ```python
 def set_error_status_enabled(enabled: bool, persist: bool = False) -> bool
@@ -338,7 +338,7 @@ A helper class for interacting with I2C devices on supported boards.
 
 <a id="arduino_nicla_sense_env.i2c_device.I2CHelper.get_interface"></a>
 
-#### `get_interface`
+### `get_interface`
 
 ```python
 @staticmethod
@@ -388,7 +388,7 @@ _read_from_register(self, register)
 
 <a id="arduino_nicla_sense_env.i2c_device.I2CDevice.__init__"></a>
 
-#### `__init__`
+### `__init__`
 
 ```python
 def __init__(bus: I2C | None = None,
@@ -404,7 +404,7 @@ A initializes the NiclaSenseEnv device.
 
 <a id="arduino_nicla_sense_env.i2c_device.I2CDevice.device_address"></a>
 
-#### `device_address`
+### `device_address`
 
 ```python
 @property
@@ -419,7 +419,7 @@ Gets the I2C address of the device.
 
 <a id="arduino_nicla_sense_env.i2c_device.I2CDevice.connected"></a>
 
-#### `connected`
+### `connected`
 
 ```python
 @property
@@ -452,7 +452,7 @@ humidity(self)
 
 <a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.temperature"></a>
 
-#### `temperature`
+### `temperature`
 
 ```python
 @property
@@ -467,7 +467,7 @@ Gets the temperature in degrees Celsius from the HS4001 sensor.
 
 <a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.humidity"></a>
 
-#### `humidity`
+### `humidity`
 
 ```python
 @property
@@ -482,7 +482,7 @@ Gets the humidity from the HS4001 sensor.
 
 <a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled"></a>
 
-#### `enabled`
+### `enabled`
 
 ```python
 @property
@@ -497,7 +497,7 @@ Gets the temperature sensor enabled status.
 
 <a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.enabled"></a>
 
-#### `enabled`
+### `enabled`
 
 ```python
 @enabled.setter
@@ -513,7 +513,7 @@ Use `set_enabled` with `persist` set to True to make the change persistent.
 
 <a id="arduino_nicla_sense_env.temperature_humidity_sensor.TemperatureHumiditySensor.set_enabled"></a>
 
-#### `set_enabled`
+### `set_enabled`
 
 ```python
 def set_enabled(is_enabled: bool, persist=False) -> bool
@@ -537,7 +537,7 @@ class OutdoorAirQualitySensor(I2CDevice)
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.air_quality_index"></a>
 
-#### `air_quality_index`
+### `air_quality_index`
 
 ```python
 @property
@@ -554,7 +554,7 @@ the 1-hour or 8-hour average of the O3 concentrations (concentration dependent).
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.air_quality_index_interpreted"></a>
 
-#### `air_quality_index_interpreted`
+### `air_quality_index_interpreted`
 
 ```python
 @property
@@ -570,7 +570,7 @@ Gets the outdoor air quality index from the ZMOD4510 sensor and interprets it in
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.fast_air_quality_index"></a>
 
-#### `fast_air_quality_index`
+### `fast_air_quality_index`
 
 ```python
 @property
@@ -587,7 +587,7 @@ As the standard averaging leads to a very slow response, especially during testi
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.no2"></a>
 
-#### `no2`
+### `no2`
 
 ```python
 @property
@@ -602,7 +602,7 @@ Gets the NO2 concentration from the ZMOD4510 sensor.
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.o3"></a>
 
-#### `o3`
+### `o3`
 
 ```python
 @property
@@ -617,7 +617,7 @@ Gets the O3 concentration from the ZMOD4510 sensor.
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.mode"></a>
 
-#### `mode`
+### `mode`
 
 ```python
 @property
@@ -636,7 +636,7 @@ outputting valuable data due to the sensor's internal algorithm and chemical com
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.mode"></a>
 
-#### `mode`
+### `mode`
 
 ```python
 @mode.setter
@@ -662,7 +662,7 @@ The cleaning procedure takes 1 minute (blocking).
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.set_mode"></a>
 
-#### `set_mode`
+### `set_mode`
 
 ```python
 def set_mode(sensor_mode: int, persist=False) -> bool
@@ -680,7 +680,7 @@ Sets the outdoor air quality sensor mode and persists the setting to flash memor
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.mode_string"></a>
 
-#### `mode_string`
+### `mode_string`
 
 ```python
 @property
@@ -696,7 +696,7 @@ Gets the outdoor air quality sensor mode as a string.
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.enabled"></a>
 
-#### `enabled`
+### `enabled`
 
 ```python
 @property
@@ -711,7 +711,7 @@ Gets the outdoor air quality sensor (ZMOD4410) enabled status.
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.enabled"></a>
 
-#### `enabled`
+### `enabled`
 
 ```python
 @enabled.setter
@@ -729,7 +729,7 @@ When the sensor is enabled after being disabled, the sensor will go back to the 
 
 <a id="arduino_nicla_sense_env.outdoor_air_quality_sensor.OutdoorAirQualitySensor.set_enabled"></a>
 
-#### `set_enabled`
+### `set_enabled`
 
 ```python
 def set_enabled(is_enabled: bool, persist=False) -> bool
@@ -755,7 +755,7 @@ class NiclaSenseEnv(I2CDevice)
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.persist_settings"></a>
 
-#### `persist_settings`
+### `persist_settings`
 
 ```python
 def persist_settings()
@@ -785,7 +785,7 @@ Make sure all these properties are in the desired state before calling this meth
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.serial_number"></a>
 
-#### `serial_number`
+### `serial_number`
 
 ```python
 @property
@@ -800,7 +800,7 @@ Gets the serial number of the device.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.product_id"></a>
 
-#### `product_id`
+### `product_id`
 
 ```python
 @property
@@ -815,7 +815,7 @@ Gets the product ID of the device.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.software_revision"></a>
 
-#### `software_revision`
+### `software_revision`
 
 ```python
 @property
@@ -830,7 +830,7 @@ Gets the software revision of the device.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.temperature_humidity_sensor"></a>
 
-#### `temperature_humidity_sensor`
+### `temperature_humidity_sensor`
 
 ```python
 @property
@@ -845,7 +845,7 @@ Gets the temperature and humidity sensor control interface.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.indoor_air_quality_sensor"></a>
 
-#### `indoor_air_quality_sensor`
+### `indoor_air_quality_sensor`
 
 ```python
 @property
@@ -860,7 +860,7 @@ Gets the indoor air quality sensor control interface.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.outdoor_air_quality_sensor"></a>
 
-#### `outdoor_air_quality_sensor`
+### `outdoor_air_quality_sensor`
 
 ```python
 @property
@@ -875,7 +875,7 @@ Gets the outdoor air quality sensor control interface.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.rgb_led"></a>
 
-#### `rgb_led`
+### `rgb_led`
 
 ```python
 @property
@@ -890,7 +890,7 @@ Gets the RGB LED control interface.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.orange_led"></a>
 
-#### `orange_led`
+### `orange_led`
 
 ```python
 @property
@@ -905,7 +905,7 @@ Gets the orange LED control interface.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.reset"></a>
 
-#### `reset`
+### `reset`
 
 ```python
 def reset()
@@ -915,7 +915,7 @@ Performs a reset of the module and sensors.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.deep_sleep"></a>
 
-#### `deep_sleep`
+### `deep_sleep`
 
 ```python
 def deep_sleep()
@@ -925,7 +925,7 @@ Puts the board in deep sleep. The board can only be woken up by a hardware reset
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.restore_factory_settings"></a>
 
-#### `restore_factory_settings`
+### `restore_factory_settings`
 
 ```python
 def restore_factory_settings()
@@ -936,7 +936,7 @@ See persist_settings() for a complete list of properties that are affected by th
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.uart_baud_rate"></a>
 
-#### `uart_baud_rate`
+### `uart_baud_rate`
 
 ```python
 @property
@@ -952,7 +952,7 @@ Returns
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.uart_baud_rate"></a>
 
-#### `uart_baud_rate`
+### `uart_baud_rate`
 
 ```python
 @uart_baud_rate.setter
@@ -974,7 +974,7 @@ Use `set_uart_baud_rate` with `persist` set to True to make the change persisten
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.uart_csv_output_enabled"></a>
 
-#### `uart_csv_output_enabled`
+### `uart_csv_output_enabled`
 
 ```python
 @property
@@ -989,7 +989,7 @@ Determines if CSV output over UART is enabled.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.uart_csv_output_enabled"></a>
 
-#### `uart_csv_output_enabled`
+### `uart_csv_output_enabled`
 
 ```python
 @uart_csv_output_enabled.setter
@@ -1017,7 +1017,7 @@ Only the columns for this sensor will be filled, the other columns will be empty
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.set_uart_csv_output_enabled"></a>
 
-#### `set_uart_csv_output_enabled`
+### `set_uart_csv_output_enabled`
 
 ```python
 def set_uart_csv_output_enabled(enabled, persist=False) -> bool
@@ -1033,7 +1033,7 @@ Enables or disables CSV output over UART.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.csv_delimiter"></a>
 
-#### `csv_delimiter`
+### `csv_delimiter`
 
 ```python
 @property
@@ -1048,7 +1048,7 @@ Gets the delimiter character for CSV output.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.csv_delimiter"></a>
 
-#### `csv_delimiter`
+### `csv_delimiter`
 
 ```python
 @csv_delimiter.setter
@@ -1066,7 +1066,7 @@ Use `set_csv_delimiter` with `persist` set to True to make the change persistent
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.set_csv_delimiter"></a>
 
-#### `set_csv_delimiter`
+### `set_csv_delimiter`
 
 ```python
 def set_csv_delimiter(delimiter, persist=False) -> bool
@@ -1083,7 +1083,7 @@ Sets the delimiter character for CSV output.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.debugging_enabled"></a>
 
-#### `debugging_enabled`
+### `debugging_enabled`
 
 ```python
 @property
@@ -1099,7 +1099,7 @@ When debugging mode is enabled, the board will send additional debug messages ov
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.debugging_enabled"></a>
 
-#### `debugging_enabled`
+### `debugging_enabled`
 
 ```python
 @debugging_enabled.setter
@@ -1116,7 +1116,7 @@ Use `set_debugging_enabled` with `persist` set to True to make the change persis
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.set_debugging_enabled"></a>
 
-#### `set_debugging_enabled`
+### `set_debugging_enabled`
 
 ```python
 def set_debugging_enabled(enabled, persist=False) -> bool
@@ -1132,7 +1132,7 @@ Enables or disables debugging mode.
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.device_address"></a>
 
-#### `device_address`
+### `device_address`
 
 ```python
 @I2CDevice.device_address.setter
@@ -1153,7 +1153,7 @@ Use `set_device_address` with `persist` set to True to make the change persisten
 
 <a id="arduino_nicla_sense_env.nicla_sense_env.NiclaSenseEnv.set_device_address"></a>
 
-#### `set_device_address`
+### `set_device_address`
 
 ```python
 def set_device_address(address, persist=False) -> bool
@@ -1203,7 +1203,7 @@ Properties
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.sulfur_odor"></a>
 
-#### `sulfur_odor`
+### `sulfur_odor`
 
 ```python
 @property
@@ -1218,7 +1218,7 @@ Gets the sulfur odor status from the ZMOD4410 sensor.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.odor_intensity"></a>
 
-#### `odor_intensity`
+### `odor_intensity`
 
 ```python
 @property
@@ -1233,7 +1233,7 @@ Gets the odor intensity from the ZMOD4410 sensor.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.ethanol"></a>
 
-#### `ethanol`
+### `ethanol`
 
 ```python
 @property
@@ -1248,7 +1248,7 @@ Gets the ethanol concentration from the ZMOD4410 sensor.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.co2"></a>
 
-#### `co2`
+### `co2`
 
 ```python
 @property
@@ -1263,7 +1263,7 @@ Gets the CO2 concentration from the ZMOD4410 sensor.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.tvoc"></a>
 
-#### `tvoc`
+### `tvoc`
 
 ```python
 @property
@@ -1278,7 +1278,7 @@ Gets the TVOC concentration from the ZMOD4410 sensor.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality"></a>
 
-#### `air_quality`
+### `air_quality`
 
 ```python
 @property
@@ -1293,7 +1293,7 @@ Gets the indoor air quality from the ZMOD4410 sensor.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.air_quality_interpreted"></a>
 
-#### `air_quality_interpreted`
+### `air_quality_interpreted`
 
 ```python
 @property
@@ -1308,7 +1308,7 @@ Gets the indoor air quality from the ZMOD4410 sensor and interprets it in terms 
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.relative_air_quality"></a>
 
-#### `relative_air_quality`
+### `relative_air_quality`
 
 ```python
 @property
@@ -1323,7 +1323,7 @@ Gets the relative indoor air quality from the ZMOD4410 sensor.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode"></a>
 
-#### `mode`
+### `mode`
 
 ```python
 @property
@@ -1340,7 +1340,7 @@ Gets the indoor air quality sensor mode.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode"></a>
 
-#### `mode`
+### `mode`
 
 ```python
 @mode.setter
@@ -1375,7 +1375,7 @@ For more accurate readings, use the default indoor air quality mode.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_mode"></a>
 
-#### `set_mode`
+### `set_mode`
 
 ```python
 def set_mode(sensor_mode: int, persist=False) -> bool
@@ -1393,7 +1393,7 @@ Sets the indoor air quality sensor mode and persists the setting to flash memory
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.mode_string"></a>
 
-#### `mode_string`
+### `mode_string`
 
 ```python
 @property
@@ -1409,7 +1409,7 @@ Gets the indoor air quality sensor mode as a string.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled"></a>
 
-#### `enabled`
+### `enabled`
 
 ```python
 @property
@@ -1424,7 +1424,7 @@ Gets the indoor air quality sensor enabled status.
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.enabled"></a>
 
-#### `enabled`
+### `enabled`
 
 ```python
 @enabled.setter
@@ -1441,7 +1441,7 @@ When the sensor is enabled after being disabled, the sensor will go back to the 
 
 <a id="arduino_nicla_sense_env.indoor_air_quality_sensor.IndoorAirQualitySensor.set_enabled"></a>
 
-#### `set_enabled`
+### `set_enabled`
 
 ```python
 def set_enabled(is_enabled: bool, persist=False) -> bool
