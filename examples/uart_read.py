@@ -1,14 +1,26 @@
 """
 This example shows how to read data from the UART port on the board.
-It is meant to run on a board only connected through UART to the Nicla Sense Env.
-This requires the Nicla Sense Env to be powered through the VIN pin.
+It is meant to run on a board ONLY connected through UART to the Nicla Sense Env.
+Boards that have an available I2C interface can connect to the Nicla Sense Env over I2C and read the data
+in a much more efficient way.
 
-UART output needs to be enabled on the Nicla Sense Env for this example to work.
-You can do so by connecting to the board over I2C to a host board, and running the following code:
+A UART-only scenario requires the Nicla Sense Env to be powered through the VIN pin
+as it won't be powered through the ESLOV connector.
+You will need to connect the UART pins of the Nicla Sense Env to the UART pins of the host board.
+On many Arduino boards the serial interface associated with those pins is Serial1.
+Please check the documentation of your board to find out which serial interface to use.
+
+IMPORTANT: UART output needs to be enabled beforehand on the Nicla Sense Env for this example to work.
+You will need an I2C capable board to do so.
+Connect Nicla Sense Env over I2C to that host board, and run the following code:
 
 device = NiclaSenseEnv()
 # Set `persist` to True so the settings are not lost after a reset
 device.set_uart_csv_output_enabled(True, persist=True)
+
+After that you can disconnect the Nicla Sense Env from the I2C host board and connect it to the UART host board.
+You won't need to run the above code again, as the settings are stored permanently.
+The code below is meant to run on the UART-only host board once the UART output is enabled.
 """
 
 from machine import Pin, UART
